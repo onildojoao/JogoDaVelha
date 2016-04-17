@@ -11,6 +11,7 @@ public class JogoLocal2P extends javax.swing.JFrame {
 
     public JogoLocal2P() {
         initComponents();
+        definirNomeJogador();
     }
 
     @SuppressWarnings("unchecked")
@@ -398,7 +399,7 @@ public class JogoLocal2P extends javax.swing.JFrame {
 
         nomeJogador = JOptionPane.showInputDialog(null, "Insira o nome do jogador 1:");
         lbljogador1.setText(nomeJogador + ":");
-        nomeJogador = JOptionPane.showInputDialog(null, "Insira o nome do jogador 1:");
+        nomeJogador = JOptionPane.showInputDialog(null, "Insira o nome do jogador 2:");
         lbljogador2.setText(nomeJogador + ":");
 
     }
