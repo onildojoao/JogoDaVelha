@@ -1,5 +1,6 @@
 package jogodavelha;
 
+import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -18,9 +19,10 @@ public class JogoWeb2P extends javax.swing.JFrame {
     private boolean rodar;
     String nomeJogador;
 
-    public JogoWeb2P() {
+    public JogoWeb2P(String nome) {
         initComponents();
-        definirNomeJogador();
+        //definirNomeJogador();
+        this.nomeJogador = nome;
         rodar = true;
 
         try {
@@ -249,6 +251,11 @@ public class JogoWeb2P extends javax.swing.JFrame {
                 btenviarActionPerformed(evt);
             }
         });
+        btenviar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btenviarKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -466,23 +473,13 @@ public class JogoWeb2P extends javax.swing.JFrame {
     }//GEN-LAST:event_btjogo9ActionPerformed
 
     private void btenviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btenviarActionPerformed
-        String mensagem = lbljogador1.getText();
-
-        try {
-            PrintStream ps = new PrintStream(s.getOutputStream());
-            mensagem += areaUsuario.getText();
-
-            ps.println(mensagem);
-            ps.flush();
-
-            areaUsuario.setText("");
-            areaUsuario.requestFocus();
-            DefaultCaret caret = (DefaultCaret) areaChat.getCaret();
-            caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
-        } catch (IOException ex) {
-            showMessageDialog(null, "Não conseguiu enviar a mensagem!", "", ERROR_MESSAGE);
-        }
+        enviarMensagem();
     }//GEN-LAST:event_btenviarActionPerformed
+
+    private void btenviarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btenviarKeyPressed
+      if (evt.getKeyCode()== KeyEvent.VK_ENTER )
+          enviarMensagem();
+    }//GEN-LAST:event_btenviarKeyPressed
 
     private void definirNomeJogador() {
         String valor = JOptionPane.showInputDialog(null, "Jogador 1 ou 2?");
@@ -559,6 +556,25 @@ public class JogoWeb2P extends javax.swing.JFrame {
             }
         });
         t.start();
+    }
+    
+    private void enviarMensagem(){
+     String mensagem = nomeJogador + " disse:";
+
+        try {
+            PrintStream ps = new PrintStream(s.getOutputStream());
+            mensagem += areaUsuario.getText();
+
+            ps.println(mensagem);
+            ps.flush();
+
+            areaUsuario.setText("");
+            areaUsuario.requestFocus();
+            DefaultCaret caret = (DefaultCaret) areaChat.getCaret();
+            caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
+        } catch (IOException ex) {
+            showMessageDialog(null, "Não conseguiu enviar a mensagem!", "", ERROR_MESSAGE);
+        }   
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea areaChat;
