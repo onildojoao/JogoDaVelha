@@ -492,7 +492,6 @@ public class JogoWeb2P extends javax.swing.JFrame {
             lbljogador1.setText(nomeJogador + ":");
         else
             lbljogador2.setText(nomeJogador + ":");
-        
     }
 
     private void resetarJogo() {
