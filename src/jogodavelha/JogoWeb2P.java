@@ -20,8 +20,10 @@ public class JogoWeb2P extends javax.swing.JFrame {
     private InputStreamReader isr;
     private boolean rodar;
     String nomeJogador = "Jogador 1";
-    public JogoWeb2P() {
+    public JogoWeb2P(String nome) {
         initComponents();
+        
+        this.nomeJogador = nome;
         rodar = true;
 
         try {
@@ -485,7 +487,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
     }//GEN-LAST:event_btenviarActionPerformed
 
     private void definirNomeJogador() {
-        // Tem que fazer ainda
+        
     }
 
     private void resetarJogo() {
@@ -506,7 +508,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
             @Override
             public void run() {
                 if ((btjogo1.getText() == "X" && btjogo2.getText() == "X" && btjogo3.getText() == "X") || (btjogo4.getText() == "X" && btjogo5.getText() == "X" && btjogo6.getText() == "X") || (btjogo7.getText() == "X" && btjogo8.getText() == "X" && btjogo9.getText() == "X") || (btjogo1.getText() == "X" && btjogo4.getText() == "X" && btjogo7.getText() == "X") || (btjogo2.getText() == "X" && btjogo5.getText() == "X" && btjogo8.getText() == "X") || (btjogo3.getText() == "X" && btjogo6.getText() == "X" && btjogo9.getText() == "X") || (btjogo1.getText() == "X" && btjogo5.getText() == "X" && btjogo9.getText() == "X") || (btjogo7.getText() == "X" && btjogo5.getText() == "X" && btjogo3.getText() == "X")) {
-                    JOptionPane.showMessageDialog(null, lbljogador1.getText() + " venceu!");
+                    JOptionPane.showMessageDialog(null, nomeJogador + " venceu!");
                     resetarJogo();
                 }
             }
@@ -520,7 +522,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
             @Override
             public void run() {
                 if ((btjogo1.getText() == "O" && btjogo2.getText() == "O" && btjogo3.getText() == "O") || (btjogo4.getText() == "O" && btjogo5.getText() == "O" && btjogo6.getText() == "O") || (btjogo7.getText() == "O" && btjogo8.getText() == "O" && btjogo9.getText() == "O") || (btjogo1.getText() == "O" && btjogo4.getText() == "O" && btjogo7.getText() == "O") || (btjogo2.getText() == "O" && btjogo5.getText() == "O" && btjogo8.getText() == "O") || (btjogo3.getText() == "O" && btjogo6.getText() == "O" && btjogo9.getText() == "O") || (btjogo1.getText() == "O" && btjogo5.getText() == "O" && btjogo9.getText() == "O") || (btjogo7.getText() == "O" && btjogo5.getText() == "O" && btjogo3.getText() == "O")) {
-                    JOptionPane.showMessageDialog(null, lbljogador2.getText() + " venceu!");
+                    JOptionPane.showMessageDialog(null, nomeJogador + " venceu!");
                     resetarJogo();
                 }
             }
