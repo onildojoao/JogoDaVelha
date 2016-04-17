@@ -11,6 +11,7 @@ public class JogoLocal2P extends javax.swing.JFrame {
 
     public JogoLocal2P() {
         initComponents();
+        definirNomeJogador();
     }
 
     @SuppressWarnings("unchecked")
@@ -436,6 +437,12 @@ public class JogoLocal2P extends javax.swing.JFrame {
             public void run() {
                 if ((btjogo1.getText() == "O" && btjogo2.getText() == "O" && btjogo3.getText() == "O") || (btjogo4.getText() == "O" && btjogo5.getText() == "O" && btjogo6.getText() == "O") || (btjogo7.getText() == "O" && btjogo8.getText() == "O" && btjogo9.getText() == "O") || (btjogo1.getText() == "O" && btjogo4.getText() == "O" && btjogo7.getText() == "O") || (btjogo2.getText() == "O" && btjogo5.getText() == "O" && btjogo8.getText() == "O") || (btjogo3.getText() == "O" && btjogo6.getText() == "O" && btjogo9.getText() == "O") || (btjogo1.getText() == "O" && btjogo5.getText() == "O" && btjogo9.getText() == "O") || (btjogo7.getText() == "O" && btjogo5.getText() == "O" && btjogo3.getText() == "O")) {
                     JOptionPane.showMessageDialog(null, lbljogador2.getText() + " venceu!");
+                    resetarJogo();
+                }
+                if(btjogo1.getText()!="" && btjogo2.getText()!="" && btjogo3.getText()!="" &&
+                        btjogo4.getText()!="" && btjogo5.getText()!="" && btjogo6.getText()!="" &&
+                        btjogo7.getText()!="" && btjogo8.getText()!="" && btjogo9.getText()!=""){
+                    JOptionPane.showMessageDialog(null, "Empate!");
                     resetarJogo();
                 }
             }
