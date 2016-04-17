@@ -1,13 +1,10 @@
 package jogodavelha;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
-import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import static javax.swing.JOptionPane.showMessageDialog;
@@ -19,9 +16,11 @@ public class JogoWeb2P extends javax.swing.JFrame {
     private BufferedReader br;
     private InputStreamReader isr;
     private boolean rodar;
-    String nomeJogador = "Jogador 1";
+    String nomeJogador;
+
     public JogoWeb2P() {
         initComponents();
+        definirNomeJogador();
         rodar = true;
 
         try {
@@ -235,6 +234,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Chat"));
 
+        areaChat.setEditable(false);
         areaChat.setColumns(20);
         areaChat.setRows(5);
         jScrollPane1.setViewportView(areaChat);
@@ -466,7 +466,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
     }//GEN-LAST:event_btjogo9ActionPerformed
 
     private void btenviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btenviarActionPerformed
-        String mensagem = lbljogador1.getText() + " disse: ";
+        String mensagem = lbljogador1.getText();
 
         try {
             PrintStream ps = new PrintStream(s.getOutputStream());
@@ -485,7 +485,14 @@ public class JogoWeb2P extends javax.swing.JFrame {
     }//GEN-LAST:event_btenviarActionPerformed
 
     private void definirNomeJogador() {
-        // Tem que fazer ainda
+        String valor = JOptionPane.showInputDialog(null, "Jogador 1 ou 2?");
+        int converte = Integer.valueOf(valor);
+        String nomeJogador = JOptionPane.showInputDialog(null, "Digite seu nome:");
+        if (converte == 1)
+            lbljogador1.setText(nomeJogador + ":");
+        else
+            lbljogador2.setText(nomeJogador + ":");
+        
     }
 
     private void resetarJogo() {
@@ -527,7 +534,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
 
         }).start();
     }
-    
+
     private void Thread() {
 
         Thread t = new Thread(new Runnable() {
@@ -584,4 +591,4 @@ public class JogoWeb2P extends javax.swing.JFrame {
     private javax.swing.JLabel variaveljogador2;
     // End of variables declaration//GEN-END:variables
 
- }
+}

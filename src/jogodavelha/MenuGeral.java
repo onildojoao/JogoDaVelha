@@ -5,6 +5,8 @@
  */
 package jogodavelha;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Joao
