@@ -16,7 +16,7 @@ public class MenuGeral extends javax.swing.JFrame {
      */
     public MenuGeral() {
         initComponents();
-        // saudades panda
+        
     }
 
     /**
