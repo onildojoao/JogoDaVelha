@@ -164,6 +164,7 @@ public class MenuGeral extends javax.swing.JFrame {
     }//GEN-LAST:event_btjogarlocal2pActionPerformed
 
     private void btjogarwebActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogarwebActionPerformed
+        //master
         String nomeJogador = JOptionPane.showInputDialog(null, "Digite seu nome");
         JogoWeb2P j3 = new JogoWeb2P(nomeJogador);
         j3.setLocationRelativeTo(null);
