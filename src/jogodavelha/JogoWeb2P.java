@@ -1,14 +1,15 @@
 package jogodavelha;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
-import javax.swing.JButton;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import static javax.swing.JOptionPane.showMessageDialog;
@@ -16,14 +17,17 @@ import javax.swing.text.DefaultCaret;
 
 public class JogoWeb2P extends javax.swing.JFrame {
 
+    private DataOutputStream dos;
+    private DataInputStream dis;
     private Socket s;
     private BufferedReader br;
     private InputStreamReader isr;
     private boolean rodar;
     String nomeJogador = "Jogador 1";
+
     public JogoWeb2P(String nome) {
         initComponents();
-        
+
         this.nomeJogador = nome;
         rodar = true;
 
@@ -31,7 +35,6 @@ public class JogoWeb2P extends javax.swing.JFrame {
             s = new Socket("127.0.0.1", 5000);
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "Não se conectou ao seridor");
-            System.exit(0);
         }
 
         Thread();
@@ -478,13 +481,10 @@ public class JogoWeb2P extends javax.swing.JFrame {
     }//GEN-LAST:event_btenviarActionPerformed
 
     private void btenviarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btenviarKeyReleased
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             enviarMensagem();
+        }
     }//GEN-LAST:event_btenviarKeyReleased
-
-    private void definirNomeJogador() {
-        
-    }
 
     private void resetarJogo() {
         btjogo1.setText(null);
@@ -521,9 +521,9 @@ public class JogoWeb2P extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, nomeJogador + " venceu!");
                     resetarJogo();
                 }
-                if(btjogo1.getText()!="" && btjogo2.getText()!="" && btjogo3.getText()!="" &&
-                        btjogo4.getText()!="" && btjogo5.getText()!="" && btjogo6.getText()!="" &&
-                        btjogo7.getText()!="" && btjogo8.getText()!="" && btjogo9.getText()!=""){
+                if (btjogo1.getText() != "" && btjogo2.getText() != "" && btjogo3.getText() != ""
+                        && btjogo4.getText() != "" && btjogo5.getText() != "" && btjogo6.getText() != ""
+                        && btjogo7.getText() != "" && btjogo8.getText() != "" && btjogo9.getText() != "") {
                     JOptionPane.showMessageDialog(null, "Empate!");
                     resetarJogo();
                 }
@@ -531,7 +531,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
 
         }).start();
     }
-    
+
     private void Thread() {
 
         Thread t = new Thread(new Runnable() {
@@ -558,14 +558,14 @@ public class JogoWeb2P extends javax.swing.JFrame {
         });
         t.start();
     }
-    
-    private void enviarMensagem(){
+
+    private void enviarMensagem() {
         String mensagem = nomeJogador + " disse: ";
 
         try {
             PrintStream ps = new PrintStream(s.getOutputStream());
             mensagem += areaUsuario.getText();
-
+            //showMessageDialog(null, mensagem);
             ps.println(mensagem);
             ps.flush();
 
@@ -577,7 +577,36 @@ public class JogoWeb2P extends javax.swing.JFrame {
             showMessageDialog(null, "Não conseguiu enviar a mensagem!", "", ERROR_MESSAGE);
         }
     }
-    
+
+    private void salvarValor() {
+        String valorBotao;
+        try {
+            //rintStream ps = new PrintStream(s.getOutputStream());
+            dos = new DataOutputStream(s.getOutputStream());
+
+            valorBotao = btjogo1.getText();
+            dos.toString();
+            //dos.writeChars(valorBotao);
+            //btjogo1.setText(valorBotao);
+            showMessageDialog(null, dos);
+            dos.flush();
+        } catch (Exception e) {
+
+        }
+    }
+
+    private void atualizarTela() {
+        try {
+            InputStreamReader isr = new InputStreamReader(s.getInputStream());
+            BufferedReader br = new BufferedReader(isr);
+            //dis = new DataInputStream(s.getInputStream());
+            //int valorBotao = dis.readInt();
+            //showMessageDialog(null, isr);
+        } catch (IOException ex) {
+            showMessageDialog(null, "Mensagem não enviada!", "", ERROR_MESSAGE);
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea areaChat;
     private javax.swing.JTextArea areaUsuario;
@@ -608,4 +637,4 @@ public class JogoWeb2P extends javax.swing.JFrame {
     private javax.swing.JLabel variaveljogador2;
     // End of variables declaration//GEN-END:variables
 
- }
+}
