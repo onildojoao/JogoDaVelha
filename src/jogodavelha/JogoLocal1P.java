@@ -307,63 +307,63 @@ public class JogoLocal1P extends javax.swing.JFrame {
 
     private void btjogo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo1ActionPerformed
         btjogo1.setFont(new java.awt.Font("Tahoma", 0, 55));
-        btjogo1.setText("O");
+        btjogo1.setText("X");
         vitoria1p();
         inteligenciaArtificial();
     }//GEN-LAST:event_btjogo1ActionPerformed
 
     private void btjogo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo2ActionPerformed
         btjogo2.setFont(new java.awt.Font("Tahoma", 0, 55));
-        btjogo2.setText("O");
+        btjogo2.setText("X");
         vitoria1p();
         inteligenciaArtificial();
     }//GEN-LAST:event_btjogo2ActionPerformed
 
     private void btjogo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo3ActionPerformed
         btjogo3.setFont(new java.awt.Font("Tahoma", 0, 55));
-        btjogo3.setText("O");
+        btjogo3.setText("X");
         vitoria1p();
         inteligenciaArtificial();
     }//GEN-LAST:event_btjogo3ActionPerformed
 
     private void btjogo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo4ActionPerformed
         btjogo4.setFont(new java.awt.Font("Tahoma", 0, 55));
-        btjogo4.setText("O");
+        btjogo4.setText("X");
         vitoria1p();
         inteligenciaArtificial();
     }//GEN-LAST:event_btjogo4ActionPerformed
 
     private void btjogo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo5ActionPerformed
         btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
-        btjogo5.setText("O");
+        btjogo5.setText("X");
         vitoria1p();
         inteligenciaArtificial();
     }//GEN-LAST:event_btjogo5ActionPerformed
 
     private void btjogo6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo6ActionPerformed
         btjogo6.setFont(new java.awt.Font("Tahoma", 0, 55));
-        btjogo6.setText("O");
+        btjogo6.setText("X");
         vitoria1p();
         inteligenciaArtificial();
     }//GEN-LAST:event_btjogo6ActionPerformed
 
     private void btjogo7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo7ActionPerformed
         btjogo7.setFont(new java.awt.Font("Tahoma", 0, 55));
-        btjogo7.setText("O");
+        btjogo7.setText("X");
         vitoria1p();
         inteligenciaArtificial();
     }//GEN-LAST:event_btjogo7ActionPerformed
 
     private void btjogo8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo8ActionPerformed
         btjogo8.setFont(new java.awt.Font("Tahoma", 0, 55));
-        btjogo8.setText("O");
+        btjogo8.setText("X");
         vitoria1p();
         inteligenciaArtificial();
     }//GEN-LAST:event_btjogo8ActionPerformed
 
     private void btjogo9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo9ActionPerformed
         btjogo9.setFont(new java.awt.Font("Tahoma", 0, 55));
-        btjogo9.setText("O");
+        btjogo9.setText("X");
         vitoria1p();
         inteligenciaArtificial();
     }//GEN-LAST:event_btjogo9ActionPerformed
@@ -408,17 +408,13 @@ public class JogoLocal1P extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Computador venceu!");
                 resetarJogo();
             } else {
-                JOptionPane.showMessageDialog(null, "Empate!");
-                resetarJogo();
+               /* JOptionPane.showMessageDialog(null, "Empate!");
+                resetarJogo();*/
             }
         }
     }
 
-    private void inteligenciaArtificial() {
-        new Thread(new Runnable() {
-
-            @Override
-            public void run() {
+    private void inteligenciaArtificial(){
                 //horizontais
                 if (btjogo1.getText() == "X" && btjogo2.getText() == "X" && btjogo3.getText() != "O") {
                     btjogo3.setText("O");
@@ -522,9 +518,6 @@ public class JogoLocal1P extends javax.swing.JFrame {
                 }
                 vitoria1p();
             }
-
-        }).start();
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btjogo1;
     private javax.swing.JButton btjogo2;

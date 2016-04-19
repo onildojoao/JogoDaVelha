@@ -507,7 +507,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
                 try {
                     isr = new InputStreamReader(s.getInputStream());
                     br = new BufferedReader(isr);
-                    
+
                     while ((mensagem = br.readLine()) != null) {
                         if (mensagem.equals("b1,X") || mensagem.equals("b1,O")
                                 || mensagem.equals("b2,X") || mensagem.equals("b2,O") 
