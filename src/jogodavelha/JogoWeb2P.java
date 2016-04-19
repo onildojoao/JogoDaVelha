@@ -385,6 +385,8 @@ public class JogoWeb2P extends javax.swing.JFrame {
             btjogo1.setText("X");
         }
         atualizarTela("b1");
+        vitoria1p();
+        vitoria2p();
     }//GEN-LAST:event_btjogo1ActionPerformed
 
     private void btjogo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo2ActionPerformed
