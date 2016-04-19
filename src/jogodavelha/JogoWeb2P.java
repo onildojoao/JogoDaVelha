@@ -1,14 +1,15 @@
 package jogodavelha;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
-import javax.swing.JButton;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import static javax.swing.JOptionPane.showMessageDialog;
@@ -16,14 +17,17 @@ import javax.swing.text.DefaultCaret;
 
 public class JogoWeb2P extends javax.swing.JFrame {
 
+    private DataOutputStream dos;
+    private DataInputStream dis;
     private Socket s;
     private BufferedReader br;
     private InputStreamReader isr;
     private boolean rodar;
     String nomeJogador = "Jogador 1";
+
     public JogoWeb2P(String nome) {
         initComponents();
-        
+
         this.nomeJogador = nome;
         rodar = true;
 
@@ -31,9 +35,8 @@ public class JogoWeb2P extends javax.swing.JFrame {
             s = new Socket("127.0.0.1", 5000);
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "Não se conectou ao seridor");
-            System.exit(0);
         }
-
+        //ThreadTela();
         Thread();
     }
 
@@ -381,8 +384,8 @@ public class JogoWeb2P extends javax.swing.JFrame {
         } else {
             btjogo1.setText("X");
         }
-        vitoria1p();
-        vitoria2p();
+        //vitoria1p();
+        atualizarTela("b1");
     }//GEN-LAST:event_btjogo1ActionPerformed
 
     private void btjogo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo2ActionPerformed
@@ -392,8 +395,8 @@ public class JogoWeb2P extends javax.swing.JFrame {
         } else {
             btjogo2.setText("X");
         }
-        vitoria1p();
-        vitoria2p();
+        //vitoria1p();
+        atualizarTela("b2");
     }//GEN-LAST:event_btjogo2ActionPerformed
 
     private void btjogo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo3ActionPerformed
@@ -403,8 +406,8 @@ public class JogoWeb2P extends javax.swing.JFrame {
         } else {
             btjogo3.setText("X");
         }
-        vitoria1p();
-        vitoria2p();
+        //vitoria1p();
+        atualizarTela("b3");
     }//GEN-LAST:event_btjogo3ActionPerformed
 
     private void btjogo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo4ActionPerformed
@@ -414,8 +417,8 @@ public class JogoWeb2P extends javax.swing.JFrame {
         } else {
             btjogo4.setText("X");
         }
-        vitoria1p();
-        vitoria2p();
+       // vitoria1p();
+        atualizarTela("b4");
     }//GEN-LAST:event_btjogo4ActionPerformed
 
     private void btjogo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo5ActionPerformed
@@ -425,8 +428,8 @@ public class JogoWeb2P extends javax.swing.JFrame {
         } else {
             btjogo5.setText("X");
         }
-        vitoria1p();
-        vitoria2p();
+       // vitoria1p();
+        atualizarTela("b5");
     }//GEN-LAST:event_btjogo5ActionPerformed
 
     private void btjogo6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo6ActionPerformed
@@ -436,8 +439,8 @@ public class JogoWeb2P extends javax.swing.JFrame {
         } else {
             btjogo6.setText("X");
         }
-        vitoria1p();
-        vitoria2p();
+        //vitoria1p();
+        atualizarTela("b6");
     }//GEN-LAST:event_btjogo6ActionPerformed
 
     private void btjogo7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo7ActionPerformed
@@ -447,8 +450,8 @@ public class JogoWeb2P extends javax.swing.JFrame {
         } else {
             btjogo7.setText("X");
         }
-        vitoria1p();
-        vitoria2p();
+        //vitoria1p();
+        atualizarTela("b7");
     }//GEN-LAST:event_btjogo7ActionPerformed
 
     private void btjogo8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo8ActionPerformed
@@ -458,8 +461,8 @@ public class JogoWeb2P extends javax.swing.JFrame {
         } else {
             btjogo8.setText("X");
         }
-        vitoria1p();
-        vitoria2p();
+        //vitoria1p();
+        atualizarTela("b8");
     }//GEN-LAST:event_btjogo8ActionPerformed
 
     private void btjogo9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo9ActionPerformed
@@ -469,8 +472,8 @@ public class JogoWeb2P extends javax.swing.JFrame {
         } else {
             btjogo9.setText("X");
         }
-        vitoria1p();
-        vitoria2p();
+        //vitoria1p();
+        atualizarTela("b9");
     }//GEN-LAST:event_btjogo9ActionPerformed
 
     private void btenviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btenviarActionPerformed
@@ -478,13 +481,10 @@ public class JogoWeb2P extends javax.swing.JFrame {
     }//GEN-LAST:event_btenviarActionPerformed
 
     private void btenviarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btenviarKeyReleased
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER)
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             enviarMensagem();
+        }
     }//GEN-LAST:event_btenviarKeyReleased
-
-    private void definirNomeJogador() {
-        
-    }
 
     private void resetarJogo() {
         btjogo1.setText(null);
@@ -499,39 +499,38 @@ public class JogoWeb2P extends javax.swing.JFrame {
     }
 
     private void vitoria1p() {
-        new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                if ((btjogo1.getText() == "X" && btjogo2.getText() == "X" && btjogo3.getText() == "X") || (btjogo4.getText() == "X" && btjogo5.getText() == "X" && btjogo6.getText() == "X") || (btjogo7.getText() == "X" && btjogo8.getText() == "X" && btjogo9.getText() == "X") || (btjogo1.getText() == "X" && btjogo4.getText() == "X" && btjogo7.getText() == "X") || (btjogo2.getText() == "X" && btjogo5.getText() == "X" && btjogo8.getText() == "X") || (btjogo3.getText() == "X" && btjogo6.getText() == "X" && btjogo9.getText() == "X") || (btjogo1.getText() == "X" && btjogo5.getText() == "X" && btjogo9.getText() == "X") || (btjogo7.getText() == "X" && btjogo5.getText() == "X" && btjogo3.getText() == "X")) {
-                    JOptionPane.showMessageDialog(null, nomeJogador + " venceu!");
-                    resetarJogo();
-                }
+        if ((btjogo1.getText() == "X" && btjogo2.getText() == "X" && btjogo3.getText() == "X")
+                || (btjogo4.getText() == "X" && btjogo5.getText() == "X" && btjogo6.getText() == "X")
+                || (btjogo7.getText() == "X" && btjogo8.getText() == "X" && btjogo9.getText() == "X")
+                || (btjogo1.getText() == "X" && btjogo4.getText() == "X" && btjogo7.getText() == "X")
+                || (btjogo2.getText() == "X" && btjogo5.getText() == "X" && btjogo8.getText() == "X")
+                || (btjogo3.getText() == "X" && btjogo6.getText() == "X" && btjogo9.getText() == "X")
+                || (btjogo1.getText() == "X" && btjogo5.getText() == "X" && btjogo9.getText() == "X")
+                || (btjogo7.getText() == "X" && btjogo5.getText() == "X" && btjogo3.getText() == "X")) {
+            JOptionPane.showMessageDialog(null, nomeJogador + " venceu!");
+            resetarJogo();
+        } else {
+            if ((btjogo1.getText() == "O" && btjogo2.getText() == "O" && btjogo3.getText() == "O")
+                    || (btjogo4.getText() == "O" && btjogo5.getText() == "O" && btjogo6.getText() == "O")
+                    || (btjogo7.getText() == "O" && btjogo8.getText() == "O" && btjogo9.getText() == "O")
+                    || (btjogo1.getText() == "O" && btjogo4.getText() == "O" && btjogo7.getText() == "O")
+                    || (btjogo2.getText() == "O" && btjogo5.getText() == "O" && btjogo8.getText() == "O")
+                    || (btjogo3.getText() == "O" && btjogo6.getText() == "O" && btjogo9.getText() == "O")
+                    || (btjogo1.getText() == "O" && btjogo5.getText() == "O" && btjogo9.getText() == "O")
+                    || (btjogo7.getText() == "O" && btjogo5.getText() == "O" && btjogo3.getText() == "O")) {
+                JOptionPane.showMessageDialog(null, nomeJogador + " venceu!");
+                resetarJogo();
+            } else {
+                /*if (btjogo1.getText() != "" && btjogo2.getText() != "" && btjogo3.getText() != ""
+                 && btjogo4.getText() != "" && btjogo5.getText() != "" && btjogo6.getText() != ""
+                 && btjogo7.getText() != "" && btjogo8.getText() != "" && btjogo9.getText() != "") {
+                 JOptionPane.showMessageDialog(null, "Empate!");
+                 resetarJogo();
+                 }*/
             }
-
-        }).start();
+        }
     }
 
-    private void vitoria2p() {
-        new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                if ((btjogo1.getText() == "O" && btjogo2.getText() == "O" && btjogo3.getText() == "O") || (btjogo4.getText() == "O" && btjogo5.getText() == "O" && btjogo6.getText() == "O") || (btjogo7.getText() == "O" && btjogo8.getText() == "O" && btjogo9.getText() == "O") || (btjogo1.getText() == "O" && btjogo4.getText() == "O" && btjogo7.getText() == "O") || (btjogo2.getText() == "O" && btjogo5.getText() == "O" && btjogo8.getText() == "O") || (btjogo3.getText() == "O" && btjogo6.getText() == "O" && btjogo9.getText() == "O") || (btjogo1.getText() == "O" && btjogo5.getText() == "O" && btjogo9.getText() == "O") || (btjogo7.getText() == "O" && btjogo5.getText() == "O" && btjogo3.getText() == "O")) {
-                    JOptionPane.showMessageDialog(null, nomeJogador + " venceu!");
-                    resetarJogo();
-                }
-                if(btjogo1.getText()!="" && btjogo2.getText()!="" && btjogo3.getText()!="" &&
-                        btjogo4.getText()!="" && btjogo5.getText()!="" && btjogo6.getText()!="" &&
-                        btjogo7.getText()!="" && btjogo8.getText()!="" && btjogo9.getText()!=""){
-                    JOptionPane.showMessageDialog(null, "Empate!");
-                    resetarJogo();
-                }
-            }
-
-        }).start();
-    }
-    
     private void Thread() {
 
         Thread t = new Thread(new Runnable() {
@@ -545,8 +544,96 @@ public class JogoWeb2P extends javax.swing.JFrame {
                     br = new BufferedReader(isr);
 
                     while ((mensagem = br.readLine()) != null) {
-                        areaChat.setText(areaChat.getText() + mensagem + "\n");
+                        if (mensagem.equals("b1") || mensagem.equals("b2") || mensagem.equals("b3")
+                                || mensagem.equals("b4") || mensagem.equals("b5") || mensagem.equals("b6")
+                                || mensagem.equals("b7") || mensagem.equals("b8") || mensagem.equals("b9")) {
+                            switch (mensagem) {
+                                case "b1": {
+                                    btjogo1.setFont(new java.awt.Font("Tahoma", 0, 55));
+                                    if (btjogo1.getText() == "X") {
+                                        btjogo1.setText("O");
+                                    } else {
+                                        btjogo1.setText("X");
+                                    }
+                                    break;
+                                }
+                                case "b2": {
+                                    btjogo2.setFont(new java.awt.Font("Tahoma", 0, 55));
+                                    if (btjogo2.getText() == "X") {
+                                        btjogo2.setText("O");
+                                    } else {
+                                        btjogo2.setText("X");
+                                    }
+                                    break;
+                                }
+                                case "b3": {
+                                    btjogo3.setFont(new java.awt.Font("Tahoma", 0, 55));
+                                    if (btjogo3.getText() == "X") {
+                                        btjogo3.setText("O");
+                                    } else {
+                                        btjogo3.setText("X");
+                                    }
+                                    break;
+                                }
+                                case "b4": {
+                                    btjogo4.setFont(new java.awt.Font("Tahoma", 0, 55));
+                                    if (btjogo4.getText() == "X") {
+                                        btjogo4.setText("O");
+                                    } else {
+                                        btjogo4.setText("X");
+                                    }
+                                    break;
+                                }
+                                case "b5": {
+                                    btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
+                                    if (btjogo5.getText() == "X") {
+                                        btjogo5.setText("O");
+                                    } else {
+                                        btjogo5.setText("X");
+                                    }
+                                    break;
+                                }
+                                case "b6": {
+                                    btjogo6.setFont(new java.awt.Font("Tahoma", 0, 55));
+                                    if (btjogo6.getText() == "X") {
+                                        btjogo6.setText("O");
+                                    } else {
+                                        btjogo6.setText("X");
+                                    }
+                                    break;
+                                }
+                                case "b7": {
+                                    btjogo7.setFont(new java.awt.Font("Tahoma", 0, 55));
+                                    if (btjogo7.getText() == "X") {
+                                        btjogo7.setText("O");
+                                    } else {
+                                        btjogo7.setText("X");
+                                    }
+                                    break;
+                                }
+                                case "b8": {
+                                    btjogo8.setFont(new java.awt.Font("Tahoma", 0, 55));
+                                    if (btjogo8.getText() == "X") {
+                                        btjogo8.setText("O");
+                                    } else {
+                                        btjogo8.setText("X");
+                                    }
+                                    break;
+                                }
+                                case "b9": {
+                                    btjogo9.setFont(new java.awt.Font("Tahoma", 0, 55));
+                                    if (btjogo9.getText() == "X") {
+                                        btjogo9.setText("O");
+                                    } else {
+                                        btjogo9.setText("X");
+                                    }
+                                    break;
+                                }
+                            }
 
+                        } else {
+                            areaChat.setText(areaChat.getText() + mensagem + "\n");
+                        }
                         if (!rodar) {
                             break;
                         }
@@ -558,14 +645,14 @@ public class JogoWeb2P extends javax.swing.JFrame {
         });
         t.start();
     }
-    
-    private void enviarMensagem(){
+
+    private void enviarMensagem() {
         String mensagem = nomeJogador + " disse: ";
 
         try {
             PrintStream ps = new PrintStream(s.getOutputStream());
             mensagem += areaUsuario.getText();
-
+            //showMessageDialog(null, mensagem);
             ps.println(mensagem);
             ps.flush();
 
@@ -577,7 +664,104 @@ public class JogoWeb2P extends javax.swing.JFrame {
             showMessageDialog(null, "Não conseguiu enviar a mensagem!", "", ERROR_MESSAGE);
         }
     }
-    
+
+    private void atualizarTela(String valor) {
+        String mensagem = "";
+        try {
+            PrintStream ps = new PrintStream(s.getOutputStream());
+            mensagem += valor;
+
+            switch (mensagem) {
+                case "b1": {
+                    btjogo1.setFont(new java.awt.Font("Tahoma", 0, 55));
+                    if (btjogo1.getText() == "X") {
+                        btjogo1.setText("O");
+                    } else {
+                        btjogo1.setText("X");
+                    }
+                    break;
+                }
+                case "b2": {
+                    btjogo2.setFont(new java.awt.Font("Tahoma", 0, 55));
+                    if (btjogo2.getText() == "X") {
+                        btjogo2.setText("O");
+                    } else {
+                        btjogo2.setText("X");
+                    }
+                    break;
+                }
+                case "b3": {
+                    btjogo3.setFont(new java.awt.Font("Tahoma", 0, 55));
+                    if (btjogo3.getText() == "X") {
+                        btjogo3.setText("O");
+                    } else {
+                        btjogo3.setText("X");
+                    }
+                    break;
+                }
+                case "b4": {
+                    btjogo4.setFont(new java.awt.Font("Tahoma", 0, 55));
+                    if (btjogo4.getText() == "X") {
+                        btjogo4.setText("O");
+                    } else {
+                        btjogo4.setText("X");
+                    }
+                    break;
+                }
+                case "b5": {
+                    btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
+                    if (btjogo5.getText() == "X") {
+                        btjogo5.setText("O");
+                    } else {
+                        btjogo5.setText("X");
+                    }
+                    break;
+                }
+                case "b6": {
+                    btjogo6.setFont(new java.awt.Font("Tahoma", 0, 55));
+                    if (btjogo6.getText() == "X") {
+                        btjogo6.setText("O");
+                    } else {
+                        btjogo6.setText("X");
+                    }
+                    break;
+                }
+                case "b7": {
+                    btjogo7.setFont(new java.awt.Font("Tahoma", 0, 55));
+                    if (btjogo7.getText() == "X") {
+                        btjogo7.setText("O");
+                    } else {
+                        btjogo7.setText("X");
+                    }
+                    break;
+                }
+                case "b8": {
+                    btjogo8.setFont(new java.awt.Font("Tahoma", 0, 55));
+                    if (btjogo8.getText() == "X") {
+                        btjogo8.setText("O");
+                    } else {
+                        btjogo8.setText("X");
+                    }
+                    break;
+                }
+                case "b9": {
+                    btjogo9.setFont(new java.awt.Font("Tahoma", 0, 55));
+                    if (btjogo9.getText() == "X") {
+                        btjogo9.setText("O");
+                    } else {
+                        btjogo9.setText("X");
+                    }
+                    break;
+                }
+            }
+            ps.println(mensagem);
+            ps.flush();
+
+        } catch (Exception e) {
+            showMessageDialog(null, "Deu Errado!");
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea areaChat;
     private javax.swing.JTextArea areaUsuario;
@@ -608,4 +792,4 @@ public class JogoWeb2P extends javax.swing.JFrame {
     private javax.swing.JLabel variaveljogador2;
     // End of variables declaration//GEN-END:variables
 
- }
+}
