@@ -384,9 +384,8 @@ public class JogoWeb2P extends javax.swing.JFrame {
         } else {
             btjogo1.setText("X");
         }
+        //vitoria1p();
         atualizarTela("b1");
-        vitoria1p();
-        vitoria2p();
     }//GEN-LAST:event_btjogo1ActionPerformed
 
     private void btjogo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo2ActionPerformed
@@ -396,8 +395,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
         } else {
             btjogo2.setText("X");
         }
-        vitoria1p();
-        vitoria2p();
+        //vitoria1p();
         atualizarTela("b2");
     }//GEN-LAST:event_btjogo2ActionPerformed
 
@@ -408,8 +406,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
         } else {
             btjogo3.setText("X");
         }
-        vitoria1p();
-        vitoria2p();
+        //vitoria1p();
         atualizarTela("b3");
     }//GEN-LAST:event_btjogo3ActionPerformed
 
@@ -420,8 +417,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
         } else {
             btjogo4.setText("X");
         }
-        vitoria1p();
-        vitoria2p();
+       // vitoria1p();
         atualizarTela("b4");
     }//GEN-LAST:event_btjogo4ActionPerformed
 
@@ -432,8 +428,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
         } else {
             btjogo5.setText("X");
         }
-        vitoria1p();
-        vitoria2p();
+       // vitoria1p();
         atualizarTela("b5");
     }//GEN-LAST:event_btjogo5ActionPerformed
 
@@ -444,8 +439,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
         } else {
             btjogo6.setText("X");
         }
-        vitoria1p();
-        vitoria2p();
+        //vitoria1p();
         atualizarTela("b6");
     }//GEN-LAST:event_btjogo6ActionPerformed
 
@@ -456,8 +450,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
         } else {
             btjogo7.setText("X");
         }
-        vitoria1p();
-        vitoria2p();
+        //vitoria1p();
         atualizarTela("b7");
     }//GEN-LAST:event_btjogo7ActionPerformed
 
@@ -468,8 +461,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
         } else {
             btjogo8.setText("X");
         }
-        vitoria1p();
-        vitoria2p();
+        //vitoria1p();
         atualizarTela("b8");
     }//GEN-LAST:event_btjogo8ActionPerformed
 
@@ -480,8 +472,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
         } else {
             btjogo9.setText("X");
         }
-        vitoria1p();
-        vitoria2p();
+        //vitoria1p();
         atualizarTela("b9");
     }//GEN-LAST:event_btjogo9ActionPerformed
 
@@ -508,10 +499,6 @@ public class JogoWeb2P extends javax.swing.JFrame {
     }
 
     private void vitoria1p() {
-        /*new Thread(new Runnable() {
-
-         @Override
-         public void run() {*/
         if ((btjogo1.getText() == "X" && btjogo2.getText() == "X" && btjogo3.getText() == "X")
                 || (btjogo4.getText() == "X" && btjogo5.getText() == "X" && btjogo6.getText() == "X")
                 || (btjogo7.getText() == "X" && btjogo8.getText() == "X" && btjogo9.getText() == "X")
@@ -522,36 +509,26 @@ public class JogoWeb2P extends javax.swing.JFrame {
                 || (btjogo7.getText() == "X" && btjogo5.getText() == "X" && btjogo3.getText() == "X")) {
             JOptionPane.showMessageDialog(null, nomeJogador + " venceu!");
             resetarJogo();
-            /*}
-             }
-             }).start();*/
+        } else {
+            if ((btjogo1.getText() == "O" && btjogo2.getText() == "O" && btjogo3.getText() == "O")
+                    || (btjogo4.getText() == "O" && btjogo5.getText() == "O" && btjogo6.getText() == "O")
+                    || (btjogo7.getText() == "O" && btjogo8.getText() == "O" && btjogo9.getText() == "O")
+                    || (btjogo1.getText() == "O" && btjogo4.getText() == "O" && btjogo7.getText() == "O")
+                    || (btjogo2.getText() == "O" && btjogo5.getText() == "O" && btjogo8.getText() == "O")
+                    || (btjogo3.getText() == "O" && btjogo6.getText() == "O" && btjogo9.getText() == "O")
+                    || (btjogo1.getText() == "O" && btjogo5.getText() == "O" && btjogo9.getText() == "O")
+                    || (btjogo7.getText() == "O" && btjogo5.getText() == "O" && btjogo3.getText() == "O")) {
+                JOptionPane.showMessageDialog(null, nomeJogador + " venceu!");
+                resetarJogo();
+            } else {
+                /*if (btjogo1.getText() != "" && btjogo2.getText() != "" && btjogo3.getText() != ""
+                 && btjogo4.getText() != "" && btjogo5.getText() != "" && btjogo6.getText() != ""
+                 && btjogo7.getText() != "" && btjogo8.getText() != "" && btjogo9.getText() != "") {
+                 JOptionPane.showMessageDialog(null, "Empate!");
+                 resetarJogo();
+                 }*/
+            }
         }
-    }
-
-    private void vitoria2p() {
-        /*new Thread(new Runnable() {
-
-         @Override
-         public void run() {*/
-        if ((btjogo1.getText() == "O" && btjogo2.getText() == "O" && btjogo3.getText() == "O")
-                || (btjogo4.getText() == "O" && btjogo5.getText() == "O" && btjogo6.getText() == "O")
-                || (btjogo7.getText() == "O" && btjogo8.getText() == "O" && btjogo9.getText() == "O")
-                || (btjogo1.getText() == "O" && btjogo4.getText() == "O" && btjogo7.getText() == "O")
-                || (btjogo2.getText() == "O" && btjogo5.getText() == "O" && btjogo8.getText() == "O")
-                || (btjogo3.getText() == "O" && btjogo6.getText() == "O" && btjogo9.getText() == "O")
-                || (btjogo1.getText() == "O" && btjogo5.getText() == "O" && btjogo9.getText() == "O")
-                || (btjogo7.getText() == "O" && btjogo5.getText() == "O" && btjogo3.getText() == "O")) {
-            JOptionPane.showMessageDialog(null, nomeJogador + " venceu!");
-            resetarJogo();
-        }
-        /*if (btjogo1.getText() != "" && btjogo2.getText() != "" && btjogo3.getText() != ""
-         && btjogo4.getText() != "" && btjogo5.getText() != "" && btjogo6.getText() != ""
-         && btjogo7.getText() != "" && btjogo8.getText() != "" && btjogo9.getText() != "") {
-         JOptionPane.showMessageDialog(null, "Empate!");
-         resetarJogo();
-         }
-         }
-         }).start();*/
     }
 
     private void Thread() {
@@ -565,7 +542,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
                 try {
                     isr = new InputStreamReader(s.getInputStream());
                     br = new BufferedReader(isr);
-                    
+
                     while ((mensagem = br.readLine()) != null) {
                         if (mensagem.equals("b1") || mensagem.equals("b2") || mensagem.equals("b3")
                                 || mensagem.equals("b4") || mensagem.equals("b5") || mensagem.equals("b6")
@@ -693,7 +670,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
         try {
             PrintStream ps = new PrintStream(s.getOutputStream());
             mensagem += valor;
-            
+
             switch (mensagem) {
                 case "b1": {
                     btjogo1.setFont(new java.awt.Font("Tahoma", 0, 55));

@@ -307,109 +307,64 @@ public class JogoLocal1P extends javax.swing.JFrame {
 
     private void btjogo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo1ActionPerformed
         btjogo1.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo1.getText() == "X") {
-            btjogo1.setText("O");
-        } else {
-            btjogo1.setText("X");
-        }
+        btjogo1.setText("X");
         vitoria1p();
-        vitoria2p();
         inteligenciaArtificial();
     }//GEN-LAST:event_btjogo1ActionPerformed
 
     private void btjogo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo2ActionPerformed
         btjogo2.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo2.getText() == "X") {
-            btjogo2.setText("O");
-        } else {
-            btjogo2.setText("X");
-        }
+        btjogo2.setText("X");
         vitoria1p();
-        vitoria2p();
         inteligenciaArtificial();
     }//GEN-LAST:event_btjogo2ActionPerformed
 
     private void btjogo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo3ActionPerformed
         btjogo3.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo3.getText() == "X") {
-            btjogo3.setText("O");
-        } else {
-            btjogo3.setText("X");
-        }
+        btjogo3.setText("X");
         vitoria1p();
-        vitoria2p();
         inteligenciaArtificial();
     }//GEN-LAST:event_btjogo3ActionPerformed
 
     private void btjogo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo4ActionPerformed
         btjogo4.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo4.getText() == "X") {
-            btjogo4.setText("O");
-        } else {
-            btjogo4.setText("X");
-        }
+        btjogo4.setText("X");
         vitoria1p();
-        vitoria2p();
         inteligenciaArtificial();
     }//GEN-LAST:event_btjogo4ActionPerformed
 
     private void btjogo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo5ActionPerformed
         btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo5.getText() == "X") {
-            btjogo5.setText("O");
-        } else {
-            btjogo5.setText("X");
-        }
+        btjogo5.setText("X");
         vitoria1p();
-        vitoria2p();
         inteligenciaArtificial();
     }//GEN-LAST:event_btjogo5ActionPerformed
 
     private void btjogo6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo6ActionPerformed
         btjogo6.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo6.getText() == "X") {
-            btjogo6.setText("O");
-        } else {
-            btjogo6.setText("X");
-        }
+        btjogo6.setText("X");
         vitoria1p();
-        vitoria2p();
         inteligenciaArtificial();
     }//GEN-LAST:event_btjogo6ActionPerformed
 
     private void btjogo7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo7ActionPerformed
         btjogo7.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo7.getText() == "X") {
-            btjogo7.setText("O");
-        } else {
-            btjogo7.setText("X");
-        }
+        btjogo7.setText("X");
         vitoria1p();
-        vitoria2p();
         inteligenciaArtificial();
     }//GEN-LAST:event_btjogo7ActionPerformed
 
     private void btjogo8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo8ActionPerformed
         btjogo8.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo8.getText() == "X") {
-            btjogo8.setText("O");
-        } else {
-            btjogo8.setText("X");
-        }
+        btjogo8.setText("X");
         vitoria1p();
-        vitoria2p();
         inteligenciaArtificial();
     }//GEN-LAST:event_btjogo8ActionPerformed
 
     private void btjogo9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo9ActionPerformed
         btjogo9.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo9.getText() == "X") {
-            btjogo9.setText("O");
-        } else {
-            btjogo9.setText("X");
-        }
+        btjogo9.setText("X");
         vitoria1p();
-        vitoria2p();
         inteligenciaArtificial();
     }//GEN-LAST:event_btjogo9ActionPerformed
 
@@ -431,175 +386,142 @@ public class JogoLocal1P extends javax.swing.JFrame {
     }
 
     private void vitoria1p() {
-        new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                if ((btjogo1.getText() == "X" && btjogo2.getText() == "X" && btjogo3.getText() == "X")
-                        || (btjogo4.getText() == "X" && btjogo5.getText() == "X" && btjogo6.getText() == "X")
-                        || (btjogo7.getText() == "X" && btjogo8.getText() == "X" && btjogo9.getText() == "X")
-                        || (btjogo1.getText() == "X" && btjogo4.getText() == "X" && btjogo7.getText() == "X")
-                        || (btjogo2.getText() == "X" && btjogo5.getText() == "X" && btjogo8.getText() == "X")
-                        || (btjogo3.getText() == "X" && btjogo6.getText() == "X" && btjogo9.getText() == "X")
-                        || (btjogo1.getText() == "X" && btjogo5.getText() == "X" && btjogo9.getText() == "X")
-                        || (btjogo7.getText() == "X" && btjogo5.getText() == "X" && btjogo3.getText() == "X")) {
-                    JOptionPane.showMessageDialog(null, nomeJogador + " venceu!");
-                    resetarJogo();
-                }
+        if ((btjogo1.getText() == "X" && btjogo2.getText() == "X" && btjogo3.getText() == "X")
+                || (btjogo4.getText() == "X" && btjogo5.getText() == "X" && btjogo6.getText() == "X")
+                || (btjogo7.getText() == "X" && btjogo8.getText() == "X" && btjogo9.getText() == "X")
+                || (btjogo1.getText() == "X" && btjogo4.getText() == "X" && btjogo7.getText() == "X")
+                || (btjogo2.getText() == "X" && btjogo5.getText() == "X" && btjogo8.getText() == "X")
+                || (btjogo3.getText() == "X" && btjogo6.getText() == "X" && btjogo9.getText() == "X")
+                || (btjogo1.getText() == "X" && btjogo5.getText() == "X" && btjogo9.getText() == "X")
+                || (btjogo7.getText() == "X" && btjogo5.getText() == "X" && btjogo3.getText() == "X")) {
+            JOptionPane.showMessageDialog(null, nomeJogador + " venceu!");
+            resetarJogo();
+        } else {
+            if ((btjogo1.getText() == "O" && btjogo2.getText() == "O" && btjogo3.getText() == "O")
+                    || (btjogo4.getText() == "O" && btjogo5.getText() == "O" && btjogo6.getText() == "O")
+                    || (btjogo7.getText() == "O" && btjogo8.getText() == "O" && btjogo9.getText() == "O")
+                    || (btjogo1.getText() == "O" && btjogo4.getText() == "O" && btjogo7.getText() == "O")
+                    || (btjogo2.getText() == "O" && btjogo5.getText() == "O" && btjogo8.getText() == "O")
+                    || (btjogo3.getText() == "O" && btjogo6.getText() == "O" && btjogo9.getText() == "O")
+                    || (btjogo1.getText() == "O" && btjogo5.getText() == "O" && btjogo9.getText() == "O")
+                    || (btjogo7.getText() == "O" && btjogo5.getText() == "O" && btjogo3.getText() == "O")) {
+                JOptionPane.showMessageDialog(null, nomeJogador + " venceu!");
+                resetarJogo();
+            } else {
+                /*if (btjogo1.getText() != "" && btjogo2.getText() != "" && btjogo3.getText() != ""
+                 && btjogo4.getText() != "" && btjogo5.getText() != "" && btjogo6.getText() != ""
+                 && btjogo7.getText() != "" && btjogo8.getText() != "" && btjogo9.getText() != "") {
+                 JOptionPane.showMessageDialog(null, "Empate!");
+                 resetarJogo();
+                 }*/
             }
-
-        }).start();
-    }
-
-    private void vitoria2p() {
-        new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                if ((btjogo1.getText() == "O" && btjogo2.getText() == "O" && btjogo3.getText() == "O")
-                        || (btjogo4.getText() == "O" && btjogo5.getText() == "O" && btjogo6.getText() == "O")
-                        || (btjogo7.getText() == "O" && btjogo8.getText() == "O" && btjogo9.getText() == "O")
-                        || (btjogo1.getText() == "O" && btjogo4.getText() == "O" && btjogo7.getText() == "O")
-                        || (btjogo2.getText() == "O" && btjogo5.getText() == "O" && btjogo8.getText() == "O")
-                        || (btjogo3.getText() == "O" && btjogo6.getText() == "O" && btjogo9.getText() == "O")
-                        || (btjogo1.getText() == "O" && btjogo5.getText() == "O" && btjogo9.getText() == "O")
-                        || (btjogo7.getText() == "O" && btjogo5.getText() == "O" && btjogo3.getText() == "O")) {
-                    JOptionPane.showMessageDialog(null, "Computador venceu!");
-                    resetarJogo();
-                }
-                if(btjogo1.getText()!="" && btjogo2.getText()!="" && btjogo3.getText()!="" &&
-                        btjogo4.getText()!="" && btjogo5.getText()!="" && btjogo6.getText()!="" &&
-                        btjogo7.getText()!="" && btjogo8.getText()!="" && btjogo9.getText()!=""){
-                    JOptionPane.showMessageDialog(null, "Empate!");
-                    resetarJogo();
-                }
-            }
-        }).start();
+        }
     }
 
     private void inteligenciaArtificial() {
-        new Thread(new Runnable() {
 
-            @Override
-            public void run() {
-                //horizontais
-                if (btjogo1.getText() == "X" && btjogo2.getText() == "X" && btjogo3.getText() != "O") {
-                    btjogo3.setText("O");
-                    btjogo3.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo1.getText() == "X" && btjogo3.getText() == "X" && btjogo2.getText() != "O") {
-                    btjogo2.setText("O");
-                    btjogo2.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo2.getText() == "X" && btjogo3.getText() == "X" && btjogo1.getText() != "O") {
-                    btjogo1.setText("O");
-                    btjogo1.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo4.getText() == "X" && btjogo5.getText() == "X" && btjogo6.getText() != "O") {
-                    btjogo6.setText("O");
-                    btjogo6.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo6.getText() == "X" && btjogo5.getText() == "X" && btjogo4.getText() != "O") {
-                    btjogo4.setText("O");
-                    btjogo4.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo4.getText() == "X" && btjogo6.getText() == "X" && btjogo5.getText() != "O") {
-                    btjogo5.setText("O");
-                    btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo7.getText() == "X" && btjogo8.getText() == "X" && btjogo9.getText() != "O") {
-                    btjogo9.setText("O");
-                    btjogo9.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo9.getText() == "X" && btjogo8.getText() == "X" && btjogo7.getText() != "O") {
-                    btjogo7.setText("O");
-                    btjogo7.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo7.getText() == "X" && btjogo9.getText() == "X" && btjogo8.getText() != "O") {
-                    btjogo8.setText("O");
-                    btjogo8.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo7.getText() == "X" && btjogo9.getText() == "X" && btjogo8.getText() != "O") {
-                    btjogo8.setText("O");
-                    btjogo8.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } 
-                
-                //verticais
-                else if (btjogo7.getText() == "X" && btjogo4.getText() == "X" && btjogo1.getText() != "O") {
-                    btjogo1.setText("O");
-                    btjogo1.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo7.getText() == "X" && btjogo1.getText() == "X" && btjogo4.getText() != "O") {
-                    btjogo4.setText("O");
-                    btjogo4.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo4.getText() == "X" && btjogo1.getText() == "X" && btjogo7.getText() != "O") {
-                    btjogo7.setText("O");
-                    btjogo7.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo2.getText() == "X" && btjogo5.getText() == "X" && btjogo8.getText() != "O") {
-                    btjogo8.setText("O");
-                    btjogo8.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo2.getText() == "X" && btjogo8.getText() == "X" && btjogo5.getText() != "O") {
-                    btjogo5.setText("O");
-                    btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo5.getText() == "X" && btjogo8.getText() == "X" && btjogo2.getText() != "O") {
-                    btjogo2.setText("O");
-                    btjogo2.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo3.getText() == "X" && btjogo6.getText() == "X" && btjogo9.getText() != "O") {
-                    btjogo9.setText("O");
-                    btjogo9.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo3.getText() == "X" && btjogo9.getText() == "X" && btjogo6.getText() != "O") {
-                    btjogo6.setText("O");
-                    btjogo6.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo6.getText() == "X" && btjogo9.getText() == "X" && btjogo3.getText() != "O") {
-                    btjogo3.setText("O");
-                    btjogo3.setFont(new java.awt.Font("Tahoma", 0, 55));
-                }  
-
-                //diagonais                
-                else if (btjogo3.getText() == "X" && btjogo5.getText() == "X" && btjogo7.getText() != "O") {
-                    btjogo7.setText("O");
-                    btjogo7.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo7.getText() == "X" && btjogo5.getText() == "X" && btjogo3.getText() != "O") {
-                    btjogo3.setText("O");
-                    btjogo3.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo3.getText() == "X" && btjogo7.getText() == "X" && btjogo5.getText() != "O") {
-                    btjogo5.setText("O");
-                    btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo1.getText() == "X" && btjogo5.getText() == "X" && btjogo9.getText() != "O") {
-                    btjogo9.setText("O");
-                    btjogo9.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo9.getText() == "X" && btjogo5.getText() == "X" && btjogo1.getText() != "O") {
-                    btjogo1.setText("O");
-                    btjogo1.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } else if (btjogo1.getText() == "X" && btjogo9.getText() == "X" && btjogo5.getText() != "O") {
-                    btjogo5.setText("O");
-                    btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
-                } 
-                
-                //Jogos Aleatorios
-                else if (btjogo5.getText() == "") {
-                    btjogo5.setText("O");
-                    btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
-                }
-                else if (btjogo1.getText() == "") {
-                    btjogo1.setText("O");
-                    btjogo1.setFont(new java.awt.Font("Tahoma", 0, 55));
-                }
-                else if (btjogo2.getText() == "") {
-                    btjogo2.setText("O");
-                    btjogo2.setFont(new java.awt.Font("Tahoma", 0, 55));
-                }
-                else if (btjogo3.getText() == "") {
-                    btjogo3.setText("O");
-                    btjogo3.setFont(new java.awt.Font("Tahoma", 0, 55));
-                }
-                else if (btjogo4.getText() == "") {
-                    btjogo4.setText("O");
-                    btjogo4.setFont(new java.awt.Font("Tahoma", 0, 55));
-                }
-                else if (btjogo6.getText() == "") {
-                    btjogo6.setText("O");
-                    btjogo6.setFont(new java.awt.Font("Tahoma", 0, 55));
-                }
-                else if (btjogo7.getText() == "") {
-                    btjogo7.setText("O");
-                    btjogo7.setFont(new java.awt.Font("Tahoma", 0, 55));
-                }
-                vitoria1p();
-                vitoria2p();
-            }
-
-        }).start();
+        //horizontais
+        if (btjogo1.getText() == "X" && btjogo2.getText() == "X" && btjogo3.getText() != "O") {
+            btjogo3.setText("O");
+            btjogo3.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo1.getText() == "X" && btjogo3.getText() == "X" && btjogo2.getText() != "O") {
+            btjogo2.setText("O");
+            btjogo2.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo2.getText() == "X" && btjogo3.getText() == "X" && btjogo1.getText() != "O") {
+            btjogo1.setText("O");
+            btjogo1.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo4.getText() == "X" && btjogo5.getText() == "X" && btjogo6.getText() != "O") {
+            btjogo6.setText("O");
+            btjogo6.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo6.getText() == "X" && btjogo5.getText() == "X" && btjogo4.getText() != "O") {
+            btjogo4.setText("O");
+            btjogo4.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo4.getText() == "X" && btjogo6.getText() == "X" && btjogo5.getText() != "O") {
+            btjogo5.setText("O");
+            btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo7.getText() == "X" && btjogo8.getText() == "X" && btjogo9.getText() != "O") {
+            btjogo9.setText("O");
+            btjogo9.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo9.getText() == "X" && btjogo8.getText() == "X" && btjogo7.getText() != "O") {
+            btjogo7.setText("O");
+            btjogo7.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo7.getText() == "X" && btjogo9.getText() == "X" && btjogo8.getText() != "O") {
+            btjogo8.setText("O");
+            btjogo8.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo7.getText() == "X" && btjogo9.getText() == "X" && btjogo8.getText() != "O") {
+            btjogo8.setText("O");
+            btjogo8.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } //verticais
+        else if (btjogo7.getText() == "X" && btjogo4.getText() == "X" && btjogo1.getText() != "O") {
+            btjogo1.setText("O");
+            btjogo1.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo7.getText() == "X" && btjogo1.getText() == "X" && btjogo4.getText() != "O") {
+            btjogo4.setText("O");
+            btjogo4.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo4.getText() == "X" && btjogo1.getText() == "X" && btjogo7.getText() != "O") {
+            btjogo7.setText("O");
+            btjogo7.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo2.getText() == "X" && btjogo5.getText() == "X" && btjogo8.getText() != "O") {
+            btjogo8.setText("O");
+            btjogo8.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo2.getText() == "X" && btjogo8.getText() == "X" && btjogo5.getText() != "O") {
+            btjogo5.setText("O");
+            btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo5.getText() == "X" && btjogo8.getText() == "X" && btjogo2.getText() != "O") {
+            btjogo2.setText("O");
+            btjogo2.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo3.getText() == "X" && btjogo6.getText() == "X" && btjogo9.getText() != "O") {
+            btjogo9.setText("O");
+            btjogo9.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo3.getText() == "X" && btjogo9.getText() == "X" && btjogo6.getText() != "O") {
+            btjogo6.setText("O");
+            btjogo6.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo6.getText() == "X" && btjogo9.getText() == "X" && btjogo3.getText() != "O") {
+            btjogo3.setText("O");
+            btjogo3.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } //diagonais                
+        else if (btjogo3.getText() == "X" && btjogo5.getText() == "X" && btjogo7.getText() != "O") {
+            btjogo7.setText("O");
+            btjogo7.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo7.getText() == "X" && btjogo5.getText() == "X" && btjogo3.getText() != "O") {
+            btjogo3.setText("O");
+            btjogo3.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo3.getText() == "X" && btjogo7.getText() == "X" && btjogo5.getText() != "O") {
+            btjogo5.setText("O");
+            btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo1.getText() == "X" && btjogo5.getText() == "X" && btjogo9.getText() != "O") {
+            btjogo9.setText("O");
+            btjogo9.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo9.getText() == "X" && btjogo5.getText() == "X" && btjogo1.getText() != "O") {
+            btjogo1.setText("O");
+            btjogo1.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo1.getText() == "X" && btjogo9.getText() == "X" && btjogo5.getText() != "O") {
+            btjogo5.setText("O");
+            btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } //Jogos Aleatorios
+        else if (btjogo5.getText() == "") {
+            btjogo5.setText("O");
+            btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo1.getText() == "") {
+            btjogo1.setText("O");
+            btjogo1.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo2.getText() == "") {
+            btjogo2.setText("O");
+            btjogo2.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo3.getText() == "") {
+            btjogo3.setText("O");
+            btjogo3.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo4.getText() == "") {
+            btjogo4.setText("O");
+            btjogo4.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo6.getText() == "") {
+            btjogo6.setText("O");
+            btjogo6.setFont(new java.awt.Font("Tahoma", 0, 55));
+        } else if (btjogo7.getText() == "") {
+            btjogo7.setText("O");
+            btjogo7.setFont(new java.awt.Font("Tahoma", 0, 55));
+        }
+        vitoria1p();
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btjogo1;
