@@ -303,7 +303,7 @@ public class JogoLocal2P extends javax.swing.JFrame {
         } else {
             btjogo1.setText("X");
         }
-        vitoria1p();
+        //vitoria1p();
     }//GEN-LAST:event_btjogo1ActionPerformed
 
     private void btjogo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo2ActionPerformed
@@ -313,7 +313,7 @@ public class JogoLocal2P extends javax.swing.JFrame {
         } else {
             btjogo2.setText("X");
         }
-        vitoria1p();
+        //vitoria1p();
     }//GEN-LAST:event_btjogo2ActionPerformed
 
     private void btjogo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo3ActionPerformed
@@ -323,7 +323,7 @@ public class JogoLocal2P extends javax.swing.JFrame {
         } else {
             btjogo3.setText("X");
         }
-        vitoria1p();
+        //vitoria1p();
     }//GEN-LAST:event_btjogo3ActionPerformed
 
     private void btjogo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo4ActionPerformed
@@ -333,7 +333,7 @@ public class JogoLocal2P extends javax.swing.JFrame {
         } else {
             btjogo4.setText("X");
         }
-        vitoria1p();
+        //vitoria1p();
     }//GEN-LAST:event_btjogo4ActionPerformed
 
     private void btjogo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo5ActionPerformed
@@ -343,7 +343,7 @@ public class JogoLocal2P extends javax.swing.JFrame {
         } else {
             btjogo5.setText("X");
         }
-        vitoria1p();
+        //vitoria1p();
     }//GEN-LAST:event_btjogo5ActionPerformed
 
     private void btjogo6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo6ActionPerformed
@@ -353,7 +353,7 @@ public class JogoLocal2P extends javax.swing.JFrame {
         } else {
             btjogo6.setText("X");
         }
-        vitoria1p();
+        //vitoria1p();
     }//GEN-LAST:event_btjogo6ActionPerformed
 
     private void btjogo7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo7ActionPerformed
@@ -363,7 +363,7 @@ public class JogoLocal2P extends javax.swing.JFrame {
         } else {
             btjogo7.setText("X");
         }
-        vitoria1p();
+        //vitoria1p();
     }//GEN-LAST:event_btjogo7ActionPerformed
 
     private void btjogo8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo8ActionPerformed
@@ -373,7 +373,7 @@ public class JogoLocal2P extends javax.swing.JFrame {
         } else {
             btjogo8.setText("X");
         }
-        vitoria1p();
+        //vitoria1p();
     }//GEN-LAST:event_btjogo8ActionPerformed
 
     private void btjogo9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo9ActionPerformed
@@ -383,7 +383,7 @@ public class JogoLocal2P extends javax.swing.JFrame {
         } else {
             btjogo9.setText("X");
         }
-        vitoria1p();
+        //vitoria1p();
     }//GEN-LAST:event_btjogo9ActionPerformed
 
     private void definirNomeJogador() {
@@ -424,8 +424,8 @@ public class JogoLocal2P extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, lbljogador2.getText() + " venceu!");
                 resetarJogo();
             } else {
-                JOptionPane.showMessageDialog(null, "Empate!");
-                resetarJogo();
+                //JOptionPane.showMessageDialog(null, "Empate!");
+                //resetarJogo();
             }
         }
     }

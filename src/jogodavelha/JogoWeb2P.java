@@ -418,7 +418,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
 
     private void btjogo6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo6ActionPerformed
         btjogo6.setFont(new java.awt.Font("Tahoma", 0, 55));
-        btjogo1.setText(id);
+        btjogo6.setText(id);
         vitoria1p();
         atualizarTela("b6,", id);
     }//GEN-LAST:event_btjogo6ActionPerformed
@@ -467,7 +467,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
     }
 
     private void vitoria1p() {
-        showMessageDialog(null, btjogo1.getText());
+        //showMessageDialog(null, btjogo1.getText());
         if ((btjogo1.getText() == "X" && btjogo2.getText() == "X" && btjogo3.getText() == "X")
                 || (btjogo4.getText() == "X" && btjogo5.getText() == "X" && btjogo6.getText() == "X")
                 || (btjogo7.getText() == "X" && btjogo8.getText() == "X" && btjogo9.getText() == "X")
