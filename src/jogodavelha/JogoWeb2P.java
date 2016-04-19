@@ -10,6 +10,7 @@ import java.io.PrintStream;
 import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import static javax.swing.JOptionPane.showMessageDialog;
@@ -24,10 +25,14 @@ public class JogoWeb2P extends javax.swing.JFrame {
     private InputStreamReader isr;
     private boolean rodar;
     String nomeJogador = "Jogador 1";
+    String id;
 
     public JogoWeb2P(String nome) {
         initComponents();
-
+        
+        //this.id = id;
+        id = JOptionPane.showInputDialog(null, "Qual vai ser a sua variável?");
+        //showMessageDialog(null, id);
         this.nomeJogador = nome;
         rodar = true;
 
@@ -36,7 +41,6 @@ public class JogoWeb2P extends javax.swing.JFrame {
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "Não se conectou ao seridor");
         }
-        //ThreadTela();
         Thread();
     }
 
@@ -379,101 +383,65 @@ public class JogoWeb2P extends javax.swing.JFrame {
 
     private void btjogo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo1ActionPerformed
         btjogo1.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo1.getText() == "X") {
-            btjogo1.setText("O");
-        } else {
-            btjogo1.setText("X");
-        }
-        //vitoria1p();
-        atualizarTela("b1");
+        btjogo1.setText(id);
+        vitoria1p();
+        atualizarTela("b1,", id);
     }//GEN-LAST:event_btjogo1ActionPerformed
 
     private void btjogo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo2ActionPerformed
         btjogo2.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo2.getText() == "X") {
-            btjogo2.setText("O");
-        } else {
-            btjogo2.setText("X");
-        }
-        //vitoria1p();
-        atualizarTela("b2");
+        btjogo2.setText(id);
+        vitoria1p();
+        atualizarTela("b2,", id);
     }//GEN-LAST:event_btjogo2ActionPerformed
 
     private void btjogo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo3ActionPerformed
         btjogo3.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo3.getText() == "X") {
-            btjogo3.setText("O");
-        } else {
-            btjogo3.setText("X");
-        }
-        //vitoria1p();
-        atualizarTela("b3");
+        btjogo3.setText(id);
+        vitoria1p();
+        atualizarTela("b3,", id);
     }//GEN-LAST:event_btjogo3ActionPerformed
 
     private void btjogo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo4ActionPerformed
         btjogo4.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo4.getText() == "X") {
-            btjogo4.setText("O");
-        } else {
-            btjogo4.setText("X");
-        }
-       // vitoria1p();
-        atualizarTela("b4");
+        btjogo4.setText(id);
+        vitoria1p();
+        atualizarTela("b4,", id);
     }//GEN-LAST:event_btjogo4ActionPerformed
 
     private void btjogo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo5ActionPerformed
         btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo5.getText() == "X") {
-            btjogo5.setText("O");
-        } else {
-            btjogo5.setText("X");
-        }
-       // vitoria1p();
-        atualizarTela("b5");
+        btjogo5.setText(id);
+        vitoria1p();
+        atualizarTela("b5,", id);
     }//GEN-LAST:event_btjogo5ActionPerformed
 
     private void btjogo6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo6ActionPerformed
         btjogo6.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo6.getText() == "X") {
-            btjogo6.setText("O");
-        } else {
-            btjogo6.setText("X");
-        }
-        //vitoria1p();
-        atualizarTela("b6");
+        btjogo1.setText(id);
+        vitoria1p();
+        atualizarTela("b6,", id);
     }//GEN-LAST:event_btjogo6ActionPerformed
 
     private void btjogo7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo7ActionPerformed
         btjogo7.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo7.getText() == "X") {
-            btjogo7.setText("O");
-        } else {
-            btjogo7.setText("X");
-        }
-        //vitoria1p();
-        atualizarTela("b7");
+        btjogo7.setText(id);
+        vitoria1p();
+        atualizarTela("b7,", id);
     }//GEN-LAST:event_btjogo7ActionPerformed
 
     private void btjogo8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo8ActionPerformed
         btjogo8.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo8.getText() == "X") {
-            btjogo8.setText("O");
-        } else {
-            btjogo8.setText("X");
-        }
-        //vitoria1p();
-        atualizarTela("b8");
+        btjogo8.setText(id);
+        vitoria1p();
+        atualizarTela("b8,", id);
     }//GEN-LAST:event_btjogo8ActionPerformed
 
     private void btjogo9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo9ActionPerformed
         btjogo9.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo9.getText() == "X") {
-            btjogo9.setText("O");
-        } else {
-            btjogo9.setText("X");
-        }
-        //vitoria1p();
-        atualizarTela("b9");
+        btjogo9.setText(id);
+        vitoria1p();
+        atualizarTela("b9,", id);
     }//GEN-LAST:event_btjogo9ActionPerformed
 
     private void btenviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btenviarActionPerformed
@@ -499,6 +467,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
     }
 
     private void vitoria1p() {
+        showMessageDialog(null, btjogo1.getText());
         if ((btjogo1.getText() == "X" && btjogo2.getText() == "X" && btjogo3.getText() == "X")
                 || (btjogo4.getText() == "X" && btjogo5.getText() == "X" && btjogo6.getText() == "X")
                 || (btjogo7.getText() == "X" && btjogo8.getText() == "X" && btjogo9.getText() == "X")
@@ -511,23 +480,19 @@ public class JogoWeb2P extends javax.swing.JFrame {
             resetarJogo();
         } else {
             if ((btjogo1.getText() == "O" && btjogo2.getText() == "O" && btjogo3.getText() == "O")
-                    || (btjogo4.getText() == "O" && btjogo5.getText() == "O" && btjogo6.getText() == "O")
-                    || (btjogo7.getText() == "O" && btjogo8.getText() == "O" && btjogo9.getText() == "O")
-                    || (btjogo1.getText() == "O" && btjogo4.getText() == "O" && btjogo7.getText() == "O")
-                    || (btjogo2.getText() == "O" && btjogo5.getText() == "O" && btjogo8.getText() == "O")
-                    || (btjogo3.getText() == "O" && btjogo6.getText() == "O" && btjogo9.getText() == "O")
-                    || (btjogo1.getText() == "O" && btjogo5.getText() == "O" && btjogo9.getText() == "O")
-                    || (btjogo7.getText() == "O" && btjogo5.getText() == "O" && btjogo3.getText() == "O")) {
-                JOptionPane.showMessageDialog(null, nomeJogador + " venceu!");
-                resetarJogo();
-            } else {
-                /*if (btjogo1.getText() != "" && btjogo2.getText() != "" && btjogo3.getText() != ""
-                 && btjogo4.getText() != "" && btjogo5.getText() != "" && btjogo6.getText() != ""
-                 && btjogo7.getText() != "" && btjogo8.getText() != "" && btjogo9.getText() != "") {
-                 JOptionPane.showMessageDialog(null, "Empate!");
-                 resetarJogo();
-                 }*/
-            }
+                || (btjogo4.getText() == "O" && btjogo5.getText() == "O" && btjogo6.getText() == "O")
+                || (btjogo7.getText() == "O" && btjogo8.getText() == "O" && btjogo9.getText() == "O")
+                || (btjogo1.getText() == "O" && btjogo4.getText() == "O" && btjogo7.getText() == "O")
+                || (btjogo2.getText() == "O" && btjogo5.getText() == "O" && btjogo8.getText() == "O")
+                || (btjogo3.getText() == "O" && btjogo6.getText() == "O" && btjogo9.getText() == "O")
+                || (btjogo1.getText() == "O" && btjogo5.getText() == "O" && btjogo9.getText() == "O")
+                || (btjogo7.getText() == "O" && btjogo5.getText() == "O" && btjogo3.getText() == "O")) {
+            JOptionPane.showMessageDialog(null, nomeJogador + " venceu!");
+            resetarJogo();
+        } else {
+         //JOptionPane.showMessageDialog(null, "Empate!");
+         //resetarJogo();
+         }
         }
     }
 
@@ -544,89 +509,122 @@ public class JogoWeb2P extends javax.swing.JFrame {
                     br = new BufferedReader(isr);
 
                     while ((mensagem = br.readLine()) != null) {
-                        if (mensagem.equals("b1") || mensagem.equals("b2") || mensagem.equals("b3")
-                                || mensagem.equals("b4") || mensagem.equals("b5") || mensagem.equals("b6")
-                                || mensagem.equals("b7") || mensagem.equals("b8") || mensagem.equals("b9")) {
+                        if (mensagem.equals("b1,X") || mensagem.equals("b1,O")
+                                || mensagem.equals("b2,X") || mensagem.equals("b2,O") 
+                                || mensagem.equals("b3,X") || mensagem.equals("b3,O")
+                                || mensagem.equals("b4,X") || mensagem.equals("b4,O")
+                                || mensagem.equals("b5,X") || mensagem.equals("b5,O") 
+                                || mensagem.equals("b6,X") || mensagem.equals("b6,O")
+                                || mensagem.equals("b7,X") || mensagem.equals("b7,O") 
+                                || mensagem.equals("b8,X") || mensagem.equals("b8,O") 
+                                || mensagem.equals("b9,X") || mensagem.equals("b9,O")) {
                             switch (mensagem) {
-                                case "b1": {
+                                case "b1,X": {
+                                    String[] teste = mensagem.split(Pattern.quote(","));
                                     btjogo1.setFont(new java.awt.Font("Tahoma", 0, 55));
-                                    if (btjogo1.getText() == "X") {
-                                        btjogo1.setText("O");
-                                    } else {
-                                        btjogo1.setText("X");
-                                    }
+                                    btjogo1.setText(teste[1]);
                                     break;
                                 }
-                                case "b2": {
+                                case "b1,O": {
+                                    String[] teste = mensagem.split(Pattern.quote(","));
+                                    btjogo1.setFont(new java.awt.Font("Tahoma", 0, 55));
+                                    btjogo1.setText(teste[1]);
+                                    break;
+                                }
+                                case "b2,X": {
+                                    String[] teste = mensagem.split(Pattern.quote(","));
                                     btjogo2.setFont(new java.awt.Font("Tahoma", 0, 55));
-                                    if (btjogo2.getText() == "X") {
-                                        btjogo2.setText("O");
-                                    } else {
-                                        btjogo2.setText("X");
-                                    }
+                                    btjogo2.setText(teste[1]);
                                     break;
                                 }
-                                case "b3": {
+                                case "b2,O": {
+                                    String[] teste = mensagem.split(Pattern.quote(","));
+                                    btjogo2.setFont(new java.awt.Font("Tahoma", 0, 55));
+                                    btjogo2.setText(teste[1]);
+                                    break;
+                                }
+                                case "b3,X": {
+                                    String[] teste = mensagem.split(Pattern.quote(","));
                                     btjogo3.setFont(new java.awt.Font("Tahoma", 0, 55));
-                                    if (btjogo3.getText() == "X") {
-                                        btjogo3.setText("O");
-                                    } else {
-                                        btjogo3.setText("X");
-                                    }
+                                    btjogo3.setText(teste[1]);
                                     break;
                                 }
-                                case "b4": {
+                                case "b3,O": {
+                                    String[] teste = mensagem.split(Pattern.quote(","));
+                                    btjogo3.setFont(new java.awt.Font("Tahoma", 0, 55));
+                                    btjogo3.setText(teste[1]);
+                                    break;
+                                }
+                                case "b4,X": {
+                                    String[] teste = mensagem.split(Pattern.quote(","));
                                     btjogo4.setFont(new java.awt.Font("Tahoma", 0, 55));
-                                    if (btjogo4.getText() == "X") {
-                                        btjogo4.setText("O");
-                                    } else {
-                                        btjogo4.setText("X");
-                                    }
+                                    btjogo4.setText(teste[1]);
                                     break;
                                 }
-                                case "b5": {
+                                case "b4,O": {
+                                    String[] teste = mensagem.split(Pattern.quote(","));
+                                    btjogo4.setFont(new java.awt.Font("Tahoma", 0, 55));
+                                    btjogo4.setText(teste[1]);
+                                    break;
+                                }
+                                case "b5,X": {
+                                    String[] teste = mensagem.split(Pattern.quote(","));
                                     btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
-                                    if (btjogo5.getText() == "X") {
-                                        btjogo5.setText("O");
-                                    } else {
-                                        btjogo5.setText("X");
-                                    }
+                                    btjogo5.setText(teste[1]);
                                     break;
                                 }
-                                case "b6": {
+                                case "b5,O": {
+                                    String[] teste = mensagem.split(Pattern.quote(","));
+                                    btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
+                                    btjogo5.setText(teste[1]);
+                                    break;
+                                }
+                                case "b6,X": {
+                                    String[] teste = mensagem.split(Pattern.quote(","));
                                     btjogo6.setFont(new java.awt.Font("Tahoma", 0, 55));
-                                    if (btjogo6.getText() == "X") {
-                                        btjogo6.setText("O");
-                                    } else {
-                                        btjogo6.setText("X");
-                                    }
+                                    btjogo6.setText(teste[1]);
                                     break;
                                 }
-                                case "b7": {
+                                case "b6,O": {
+                                    String[] teste = mensagem.split(Pattern.quote(","));
+                                    btjogo6.setFont(new java.awt.Font("Tahoma", 0, 55));
+                                    btjogo6.setText(teste[1]);
+                                    break;
+                                }
+                                case "b7,X": {
+                                    String[] teste = mensagem.split(Pattern.quote(","));
                                     btjogo7.setFont(new java.awt.Font("Tahoma", 0, 55));
-                                    if (btjogo7.getText() == "X") {
-                                        btjogo7.setText("O");
-                                    } else {
-                                        btjogo7.setText("X");
-                                    }
+                                    btjogo7.setText(teste[1]);
                                     break;
                                 }
-                                case "b8": {
+                                case "b7,O": {
+                                    String[] teste = mensagem.split(Pattern.quote(","));
+                                    btjogo7.setFont(new java.awt.Font("Tahoma", 0, 55));
+                                    btjogo7.setText(teste[1]);
+                                    break;
+                                }
+                                case "b8,X": {
+                                    String[] teste = mensagem.split(Pattern.quote(","));
                                     btjogo8.setFont(new java.awt.Font("Tahoma", 0, 55));
-                                    if (btjogo8.getText() == "X") {
-                                        btjogo8.setText("O");
-                                    } else {
-                                        btjogo8.setText("X");
-                                    }
+                                    btjogo8.setText(teste[1]);
                                     break;
                                 }
-                                case "b9": {
+                                case "b8,O": {
+                                    String[] teste = mensagem.split(Pattern.quote(","));
+                                    btjogo8.setFont(new java.awt.Font("Tahoma", 0, 55));
+                                    btjogo8.setText(teste[1]);
+                                    break;
+                                }
+                                case "b9,X": {
+                                    String[] teste = mensagem.split(Pattern.quote(","));
                                     btjogo9.setFont(new java.awt.Font("Tahoma", 0, 55));
-                                    if (btjogo9.getText() == "X") {
-                                        btjogo9.setText("O");
-                                    } else {
-                                        btjogo9.setText("X");
-                                    }
+                                    btjogo9.setText(teste[1]);
+                                    break;
+                                }
+                                case "b9,O": {
+                                    String[] teste = mensagem.split(Pattern.quote(","));
+                                    btjogo9.setFont(new java.awt.Font("Tahoma", 0, 55));
+                                    btjogo9.setText(teste[1]);
                                     break;
                                 }
                             }
@@ -665,95 +663,12 @@ public class JogoWeb2P extends javax.swing.JFrame {
         }
     }
 
-    private void atualizarTela(String valor) {
+    private void atualizarTela(String valor, String id) {
         String mensagem = "";
         try {
             PrintStream ps = new PrintStream(s.getOutputStream());
-            mensagem += valor;
-
-            switch (mensagem) {
-                case "b1": {
-                    btjogo1.setFont(new java.awt.Font("Tahoma", 0, 55));
-                    if (btjogo1.getText() == "X") {
-                        btjogo1.setText("O");
-                    } else {
-                        btjogo1.setText("X");
-                    }
-                    break;
-                }
-                case "b2": {
-                    btjogo2.setFont(new java.awt.Font("Tahoma", 0, 55));
-                    if (btjogo2.getText() == "X") {
-                        btjogo2.setText("O");
-                    } else {
-                        btjogo2.setText("X");
-                    }
-                    break;
-                }
-                case "b3": {
-                    btjogo3.setFont(new java.awt.Font("Tahoma", 0, 55));
-                    if (btjogo3.getText() == "X") {
-                        btjogo3.setText("O");
-                    } else {
-                        btjogo3.setText("X");
-                    }
-                    break;
-                }
-                case "b4": {
-                    btjogo4.setFont(new java.awt.Font("Tahoma", 0, 55));
-                    if (btjogo4.getText() == "X") {
-                        btjogo4.setText("O");
-                    } else {
-                        btjogo4.setText("X");
-                    }
-                    break;
-                }
-                case "b5": {
-                    btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
-                    if (btjogo5.getText() == "X") {
-                        btjogo5.setText("O");
-                    } else {
-                        btjogo5.setText("X");
-                    }
-                    break;
-                }
-                case "b6": {
-                    btjogo6.setFont(new java.awt.Font("Tahoma", 0, 55));
-                    if (btjogo6.getText() == "X") {
-                        btjogo6.setText("O");
-                    } else {
-                        btjogo6.setText("X");
-                    }
-                    break;
-                }
-                case "b7": {
-                    btjogo7.setFont(new java.awt.Font("Tahoma", 0, 55));
-                    if (btjogo7.getText() == "X") {
-                        btjogo7.setText("O");
-                    } else {
-                        btjogo7.setText("X");
-                    }
-                    break;
-                }
-                case "b8": {
-                    btjogo8.setFont(new java.awt.Font("Tahoma", 0, 55));
-                    if (btjogo8.getText() == "X") {
-                        btjogo8.setText("O");
-                    } else {
-                        btjogo8.setText("X");
-                    }
-                    break;
-                }
-                case "b9": {
-                    btjogo9.setFont(new java.awt.Font("Tahoma", 0, 55));
-                    if (btjogo9.getText() == "X") {
-                        btjogo9.setText("O");
-                    } else {
-                        btjogo9.setText("X");
-                    }
-                    break;
-                }
-            }
+            mensagem += valor + id;
+            //showMessageDialog(null, mensagem);
             ps.println(mensagem);
             ps.flush();
 

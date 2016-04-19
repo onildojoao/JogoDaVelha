@@ -409,7 +409,14 @@ public class JogoLocal2P extends javax.swing.JFrame {
 
     private void vitoria1p() {
 
-        if ((btjogo1.getText() == "X" && btjogo2.getText() == "X" && btjogo3.getText() == "X") || (btjogo4.getText() == "X" && btjogo5.getText() == "X" && btjogo6.getText() == "X") || (btjogo7.getText() == "X" && btjogo8.getText() == "X" && btjogo9.getText() == "X") || (btjogo1.getText() == "X" && btjogo4.getText() == "X" && btjogo7.getText() == "X") || (btjogo2.getText() == "X" && btjogo5.getText() == "X" && btjogo8.getText() == "X") || (btjogo3.getText() == "X" && btjogo6.getText() == "X" && btjogo9.getText() == "X") || (btjogo1.getText() == "X" && btjogo5.getText() == "X" && btjogo9.getText() == "X") || (btjogo7.getText() == "X" && btjogo5.getText() == "X" && btjogo3.getText() == "X")) {
+        if ((btjogo1.getText() == "X" && btjogo2.getText() == "X" && btjogo3.getText() == "X")
+                || (btjogo4.getText() == "X" && btjogo5.getText() == "X" && btjogo6.getText() == "X")
+                || (btjogo7.getText() == "X" && btjogo8.getText() == "X" && btjogo9.getText() == "X")
+                || (btjogo1.getText() == "X" && btjogo4.getText() == "X" && btjogo7.getText() == "X")
+                || (btjogo2.getText() == "X" && btjogo5.getText() == "X" && btjogo8.getText() == "X")
+                || (btjogo3.getText() == "X" && btjogo6.getText() == "X" && btjogo9.getText() == "X")
+                || (btjogo1.getText() == "X" && btjogo5.getText() == "X" && btjogo9.getText() == "X")
+                || (btjogo7.getText() == "X" && btjogo5.getText() == "X" && btjogo3.getText() == "X")) {
             JOptionPane.showMessageDialog(null, lbljogador1.getText() + " venceu!");
             resetarJogo();
         } else {
@@ -421,8 +428,8 @@ public class JogoLocal2P extends javax.swing.JFrame {
                 resetarJogo();
             }
         }
-
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btjogo1;
