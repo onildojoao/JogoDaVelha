@@ -390,7 +390,7 @@ public class JogoLocal2P extends javax.swing.JFrame {
 
         nomeJogador = JOptionPane.showInputDialog(null, "Insira o nome do jogador 1:");
         lbljogador1.setText(nomeJogador + ":");
-        nomeJogador = JOptionPane.showInputDialog(null, "Insira o nome do jogador 1:");
+        nomeJogador = JOptionPane.showInputDialog(null, "Insira o nome do jogador 2:");
         lbljogador2.setText(nomeJogador + ":");
 
     }
@@ -424,8 +424,12 @@ public class JogoLocal2P extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, lbljogador2.getText() + " venceu!");
                 resetarJogo();
             } else {
-                //JOptionPane.showMessageDialog(null, "Empate!");
-                //resetarJogo();
+                if (btjogo1.getText() != "" && btjogo2.getText() != "" && btjogo3.getText() != ""
+                        && btjogo4.getText() != "" && btjogo5.getText() != "" && btjogo6.getText() != ""
+                        && btjogo7.getText() != "" && btjogo8.getText() != "" && btjogo9.getText() != "") {
+                    JOptionPane.showMessageDialog(null, "Empate!");
+                    resetarJogo();
+                }
             }
         }
     }
