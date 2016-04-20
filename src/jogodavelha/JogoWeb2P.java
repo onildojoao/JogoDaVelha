@@ -29,7 +29,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
 
     public JogoWeb2P(String nome) {
         initComponents();
-        
+
         //this.id = id;
         id = JOptionPane.showInputDialog(null, "Qual vai ser a sua variável?");
         //showMessageDialog(null, id);
@@ -480,19 +480,23 @@ public class JogoWeb2P extends javax.swing.JFrame {
             resetarJogo();
         } else {
             if ((btjogo1.getText() == "O" && btjogo2.getText() == "O" && btjogo3.getText() == "O")
-                || (btjogo4.getText() == "O" && btjogo5.getText() == "O" && btjogo6.getText() == "O")
-                || (btjogo7.getText() == "O" && btjogo8.getText() == "O" && btjogo9.getText() == "O")
-                || (btjogo1.getText() == "O" && btjogo4.getText() == "O" && btjogo7.getText() == "O")
-                || (btjogo2.getText() == "O" && btjogo5.getText() == "O" && btjogo8.getText() == "O")
-                || (btjogo3.getText() == "O" && btjogo6.getText() == "O" && btjogo9.getText() == "O")
-                || (btjogo1.getText() == "O" && btjogo5.getText() == "O" && btjogo9.getText() == "O")
-                || (btjogo7.getText() == "O" && btjogo5.getText() == "O" && btjogo3.getText() == "O")) {
-            JOptionPane.showMessageDialog(null, nomeJogador + " venceu!");
-            resetarJogo();
-        } else {
-         //JOptionPane.showMessageDialog(null, "Empate!");
-         //resetarJogo();
-         }
+                    || (btjogo4.getText() == "O" && btjogo5.getText() == "O" && btjogo6.getText() == "O")
+                    || (btjogo7.getText() == "O" && btjogo8.getText() == "O" && btjogo9.getText() == "O")
+                    || (btjogo1.getText() == "O" && btjogo4.getText() == "O" && btjogo7.getText() == "O")
+                    || (btjogo2.getText() == "O" && btjogo5.getText() == "O" && btjogo8.getText() == "O")
+                    || (btjogo3.getText() == "O" && btjogo6.getText() == "O" && btjogo9.getText() == "O")
+                    || (btjogo1.getText() == "O" && btjogo5.getText() == "O" && btjogo9.getText() == "O")
+                    || (btjogo7.getText() == "O" && btjogo5.getText() == "O" && btjogo3.getText() == "O")) {
+                JOptionPane.showMessageDialog(null, nomeJogador + " venceu!");
+                resetarJogo();
+            } else {
+                if (btjogo1.getText() != "" && btjogo2.getText() != "" && btjogo3.getText() != ""
+                        && btjogo4.getText() != "" && btjogo5.getText() != "" && btjogo6.getText() != ""
+                        && btjogo7.getText() != "" && btjogo8.getText() != "" && btjogo9.getText() != "") {
+                    JOptionPane.showMessageDialog(null, "Empate!");
+                    resetarJogo();
+                }
+            }
         }
     }
 
@@ -510,13 +514,13 @@ public class JogoWeb2P extends javax.swing.JFrame {
 
                     while ((mensagem = br.readLine()) != null) {
                         if (mensagem.equals("b1,X") || mensagem.equals("b1,O")
-                                || mensagem.equals("b2,X") || mensagem.equals("b2,O") 
+                                || mensagem.equals("b2,X") || mensagem.equals("b2,O")
                                 || mensagem.equals("b3,X") || mensagem.equals("b3,O")
                                 || mensagem.equals("b4,X") || mensagem.equals("b4,O")
-                                || mensagem.equals("b5,X") || mensagem.equals("b5,O") 
+                                || mensagem.equals("b5,X") || mensagem.equals("b5,O")
                                 || mensagem.equals("b6,X") || mensagem.equals("b6,O")
-                                || mensagem.equals("b7,X") || mensagem.equals("b7,O") 
-                                || mensagem.equals("b8,X") || mensagem.equals("b8,O") 
+                                || mensagem.equals("b7,X") || mensagem.equals("b7,O")
+                                || mensagem.equals("b8,X") || mensagem.equals("b8,O")
                                 || mensagem.equals("b9,X") || mensagem.equals("b9,O")) {
                             switch (mensagem) {
                                 case "b1,X": {
