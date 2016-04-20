@@ -26,6 +26,8 @@ public class JogoWeb2P extends javax.swing.JFrame {
     private boolean rodar;
     String nomeJogador = "Jogador 1";
     String id;
+    String xis ="X";
+    String bola ="O";
 
     public JogoWeb2P(String nome) {
         initComponents();
@@ -370,64 +372,64 @@ public class JogoWeb2P extends javax.swing.JFrame {
     private void btjogo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo1ActionPerformed
         btjogo1.setFont(new java.awt.Font("Tahoma", 0, 55));
         btjogo1.setText(id);
-        vitoria1p();
         atualizarTela("b1,", id);
+        vitoria1p();
     }//GEN-LAST:event_btjogo1ActionPerformed
 
     private void btjogo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo2ActionPerformed
         btjogo2.setFont(new java.awt.Font("Tahoma", 0, 55));
         btjogo2.setText(id);
-        vitoria1p();
         atualizarTela("b2,", id);
+        vitoria1p();
     }//GEN-LAST:event_btjogo2ActionPerformed
 
     private void btjogo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo3ActionPerformed
         btjogo3.setFont(new java.awt.Font("Tahoma", 0, 55));
         btjogo3.setText(id);
-        vitoria1p();
         atualizarTela("b3,", id);
+        vitoria1p();
     }//GEN-LAST:event_btjogo3ActionPerformed
 
     private void btjogo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo4ActionPerformed
         btjogo4.setFont(new java.awt.Font("Tahoma", 0, 55));
         btjogo4.setText(id);
-        vitoria1p();
         atualizarTela("b4,", id);
+        vitoria1p();
     }//GEN-LAST:event_btjogo4ActionPerformed
 
     private void btjogo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo5ActionPerformed
         btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
         btjogo5.setText(id);
-        vitoria1p();
         atualizarTela("b5,", id);
+        vitoria1p();
     }//GEN-LAST:event_btjogo5ActionPerformed
 
     private void btjogo6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo6ActionPerformed
         btjogo6.setFont(new java.awt.Font("Tahoma", 0, 55));
         btjogo6.setText(id);
-        vitoria1p();
         atualizarTela("b6,", id);
+        vitoria1p();
     }//GEN-LAST:event_btjogo6ActionPerformed
 
     private void btjogo7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo7ActionPerformed
         btjogo7.setFont(new java.awt.Font("Tahoma", 0, 55));
         btjogo7.setText(id);
-        vitoria1p();
         atualizarTela("b7,", id);
+        vitoria1p();
     }//GEN-LAST:event_btjogo7ActionPerformed
 
     private void btjogo8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo8ActionPerformed
         btjogo8.setFont(new java.awt.Font("Tahoma", 0, 55));
         btjogo8.setText(id);
-        vitoria1p();
         atualizarTela("b8,", id);
+        vitoria1p();
     }//GEN-LAST:event_btjogo8ActionPerformed
 
     private void btjogo9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo9ActionPerformed
         btjogo9.setFont(new java.awt.Font("Tahoma", 0, 55));
         btjogo9.setText(id);
-        vitoria1p();
         atualizarTela("b9,", id);
+        vitoria1p();
     }//GEN-LAST:event_btjogo9ActionPerformed
 
     private void btenviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btenviarActionPerformed
@@ -454,25 +456,25 @@ public class JogoWeb2P extends javax.swing.JFrame {
 
     private void vitoria1p() {
         //showMessageDialog(null, btjogo1.getText());
-        if ((btjogo1.getText() == "X" && btjogo2.getText() == "X" && btjogo3.getText() == "X")
-                || (btjogo4.getText() == "X" && btjogo5.getText() == "X" && btjogo6.getText() == "X")
-                || (btjogo7.getText() == "X" && btjogo8.getText() == "X" && btjogo9.getText() == "X")
-                || (btjogo1.getText() == "X" && btjogo4.getText() == "X" && btjogo7.getText() == "X")
-                || (btjogo2.getText() == "X" && btjogo5.getText() == "X" && btjogo8.getText() == "X")
-                || (btjogo3.getText() == "X" && btjogo6.getText() == "X" && btjogo9.getText() == "X")
-                || (btjogo1.getText() == "X" && btjogo5.getText() == "X" && btjogo9.getText() == "X")
-                || (btjogo7.getText() == "X" && btjogo5.getText() == "X" && btjogo3.getText() == "X")) {
+        if ((btjogo1.getText().equals(xis) && btjogo2.getText().equals(xis) && btjogo3.getText().equals(xis))
+                || (btjogo4.getText().equals(xis) && btjogo5.getText().equals(xis) && btjogo6.getText().equals(xis))
+                || (btjogo7.getText().equals(xis) && btjogo8.getText().equals(xis) && btjogo9.getText().equals(xis))
+                || (btjogo1.getText().equals(xis) && btjogo4.getText().equals(xis) && btjogo7.getText().equals(xis))
+                || (btjogo2.getText().equals(xis) && btjogo5.getText().equals(xis) && btjogo8.getText().equals(xis))
+                || (btjogo3.getText().equals(xis) && btjogo6.getText().equals(xis) && btjogo9.getText().equals(xis))
+                || (btjogo1.getText().equals(xis) && btjogo5.getText().equals(xis) && btjogo9.getText().equals(xis))
+                || (btjogo7.getText().equals(xis) && btjogo5.getText().equals(xis) && btjogo3.getText().equals(xis))) {
             JOptionPane.showMessageDialog(null, nomeJogador + " venceu!");
             resetarJogo();
         } else {
-            if ((btjogo1.getText() == "O" && btjogo2.getText() == "O" && btjogo3.getText() == "O")
-                    || (btjogo4.getText() == "O" && btjogo5.getText() == "O" && btjogo6.getText() == "O")
-                    || (btjogo7.getText() == "O" && btjogo8.getText() == "O" && btjogo9.getText() == "O")
-                    || (btjogo1.getText() == "O" && btjogo4.getText() == "O" && btjogo7.getText() == "O")
-                    || (btjogo2.getText() == "O" && btjogo5.getText() == "O" && btjogo8.getText() == "O")
-                    || (btjogo3.getText() == "O" && btjogo6.getText() == "O" && btjogo9.getText() == "O")
-                    || (btjogo1.getText() == "O" && btjogo5.getText() == "O" && btjogo9.getText() == "O")
-                    || (btjogo7.getText() == "O" && btjogo5.getText() == "O" && btjogo3.getText() == "O")) {
+            if ((btjogo1.getText().equals(bola) && btjogo2.getText().equals(bola) && btjogo3.getText().equals(bola))
+                    || (btjogo4.getText().equals(bola) && btjogo5.getText().equals(bola) && btjogo6.getText().equals(bola))
+                    || (btjogo7.getText().equals(bola) && btjogo8.getText().equals(bola) && btjogo9.getText().equals(bola))
+                    || (btjogo1.getText().equals(bola) && btjogo4.getText().equals(bola) && btjogo7.getText().equals(bola))
+                    || (btjogo2.getText().equals(bola) && btjogo5.getText().equals(bola) && btjogo8.getText().equals(bola))
+                    || (btjogo3.getText().equals(bola) && btjogo6.getText().equals(bola) && btjogo9.getText().equals(bola))
+                    || (btjogo1.getText().equals(bola) && btjogo5.getText().equals(bola) && btjogo9.getText().equals(bola))
+                    || (btjogo7.getText().equals(bola) && btjogo5.getText().equals(bola) && btjogo3.getText().equals(bola))) {
                 JOptionPane.showMessageDialog(null, nomeJogador + " venceu!");
                 resetarJogo();
             } else {

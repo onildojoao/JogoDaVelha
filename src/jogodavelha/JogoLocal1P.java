@@ -510,8 +510,15 @@ public class JogoLocal1P extends javax.swing.JFrame {
         } else if (btjogo1.getText() == "X" && btjogo9.getText() == "X" && btjogo5.getText() == "") {
             btjogo5.setText("O");
             btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
-        } //Jogos Aleatorios
-        else if (btjogo5.getText() == "") {
+        }else{
+            jogosAleatorios();
+        } 
+    }
+            
+    
+
+    private void jogosAleatorios() {
+        if (btjogo5.getText() == "") {
             btjogo5.setText("O");
             btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
         } else if (btjogo1.getText() == "") {
@@ -535,6 +542,8 @@ public class JogoLocal1P extends javax.swing.JFrame {
         }
         vitoria1p();
     }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btjogo1;
     private javax.swing.JButton btjogo2;
