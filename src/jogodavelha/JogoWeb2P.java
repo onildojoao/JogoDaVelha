@@ -67,8 +67,6 @@ public class JogoWeb2P extends javax.swing.JFrame {
         pnlcontrolejogo = new javax.swing.JPanel();
         btjogovoltar = new javax.swing.JButton();
         btnovojogo = new javax.swing.JButton();
-        lblnomejogador1 = new javax.swing.JLabel();
-        lblnomejogador2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         areaChat = new javax.swing.JTextArea();
@@ -237,12 +235,6 @@ public class JogoWeb2P extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        lblnomejogador1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        lblnomejogador1.setText("Humano");
-
-        lblnomejogador2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        lblnomejogador2.setText("Humano");
-
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Chat"));
 
         areaChat.setColumns(20);
@@ -300,8 +292,6 @@ public class JogoWeb2P extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnljogadoresLayout.createSequentialGroup()
                         .addGroup(pnljogadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblnomejogador2)
-                            .addComponent(lblnomejogador1)
                             .addGroup(pnljogadoresLayout.createSequentialGroup()
                                 .addGap(40, 40, 40)
                                 .addComponent(lblmenujogadores))
@@ -323,15 +313,11 @@ public class JogoWeb2P extends javax.swing.JFrame {
                 .addGroup(pnljogadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnljogadoresLayout.createSequentialGroup()
                         .addComponent(lblmenujogadores)
-                        .addGap(5, 5, 5)
-                        .addComponent(lblnomejogador1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(24, 24, 24)
                         .addGroup(pnljogadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(variaveljogador1)
                             .addComponent(lbljogador1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblnomejogador2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(25, 25, 25)
                         .addGroup(pnljogadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lbljogador2)
                             .addComponent(variaveljogador2)))
@@ -702,8 +688,6 @@ public class JogoWeb2P extends javax.swing.JFrame {
     private javax.swing.JLabel lbljogador1;
     private javax.swing.JLabel lbljogador2;
     private javax.swing.JLabel lblmenujogadores;
-    private javax.swing.JLabel lblnomejogador1;
-    private javax.swing.JLabel lblnomejogador2;
     private javax.swing.JPanel pnlcontrolejogo;
     private javax.swing.JPanel pnljogadores;
     private javax.swing.JPanel pnljogo;
