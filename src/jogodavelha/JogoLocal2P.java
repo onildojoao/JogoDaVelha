@@ -449,6 +449,7 @@ public class JogoLocal2P extends javax.swing.JFrame {
         btjogo7.setText("");
         btjogo8.setText("");
         btjogo9.setText("");
+        turno = true;
     }
 
     private void vitoria1p() {
