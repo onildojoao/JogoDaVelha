@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 public class JogoLocal2P extends javax.swing.JFrame {
 
     String nomeJogador = "Jogador 1";
+    boolean valor;
 
     public JogoLocal2P() {
         initComponents();
@@ -37,8 +38,6 @@ public class JogoLocal2P extends javax.swing.JFrame {
         pnlcontrolejogo = new javax.swing.JPanel();
         btjogovoltar = new javax.swing.JButton();
         btnovojogo = new javax.swing.JButton();
-        lblnomejogador1 = new javax.swing.JLabel();
-        lblnomejogador2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Jogo da Velha");
@@ -199,12 +198,6 @@ public class JogoLocal2P extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        lblnomejogador1.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        lblnomejogador1.setText("Humano");
-
-        lblnomejogador2.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
-        lblnomejogador2.setText("Humano");
-
         javax.swing.GroupLayout pnljogadoresLayout = new javax.swing.GroupLayout(pnljogadores);
         pnljogadores.setLayout(pnljogadoresLayout);
         pnljogadoresLayout.setHorizontalGroup(
@@ -227,16 +220,8 @@ public class JogoLocal2P extends javax.swing.JFrame {
                                         .addComponent(variaveljogador1)))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(pnljogadoresLayout.createSequentialGroup()
-                        .addGroup(pnljogadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnljogadoresLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lblnomejogador2))
-                            .addGroup(pnljogadoresLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lblnomejogador1))
-                            .addGroup(pnljogadoresLayout.createSequentialGroup()
-                                .addGap(50, 50, 50)
-                                .addComponent(lblmenujogadores)))
+                        .addGap(50, 50, 50)
+                        .addComponent(lblmenujogadores)
                         .addGap(0, 55, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -244,15 +229,11 @@ public class JogoLocal2P extends javax.swing.JFrame {
             pnljogadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnljogadoresLayout.createSequentialGroup()
                 .addComponent(lblmenujogadores)
-                .addGap(5, 5, 5)
-                .addComponent(lblnomejogador1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(24, 24, 24)
                 .addGroup(pnljogadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(variaveljogador1)
                     .addComponent(lbljogador1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblnomejogador2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(25, 25, 25)
                 .addGroup(pnljogadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbljogador2)
                     .addComponent(variaveljogador2))
@@ -300,27 +281,34 @@ public class JogoLocal2P extends javax.swing.JFrame {
         btjogo1.setFont(new java.awt.Font("Tahoma", 0, 55));
         if (btjogo1.getText() == "X") {
             btjogo1.setText("O");
+            vitoria1p();
         } else {
+            valor = vitoria1p();
+            if (valor == false)
             btjogo1.setText("X");
         }
-        //vitoria1p();
     }//GEN-LAST:event_btjogo1ActionPerformed
 
     private void btjogo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo2ActionPerformed
         btjogo2.setFont(new java.awt.Font("Tahoma", 0, 55));
         if (btjogo2.getText() == "X") {
             btjogo2.setText("O");
+            vitoria1p();
         } else {
+            valor = vitoria1p();
+            if (valor == false)
             btjogo2.setText("X");
         }
-        //vitoria1p();
     }//GEN-LAST:event_btjogo2ActionPerformed
 
     private void btjogo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo3ActionPerformed
         btjogo3.setFont(new java.awt.Font("Tahoma", 0, 55));
         if (btjogo3.getText() == "X") {
             btjogo3.setText("O");
+            vitoria1p();
         } else {
+            valor = vitoria1p();
+            if (valor == false)
             btjogo3.setText("X");
         }
         //vitoria1p();
@@ -330,7 +318,10 @@ public class JogoLocal2P extends javax.swing.JFrame {
         btjogo4.setFont(new java.awt.Font("Tahoma", 0, 55));
         if (btjogo4.getText() == "X") {
             btjogo4.setText("O");
+            vitoria1p();
         } else {
+            valor = vitoria1p();
+            if (valor == false)
             btjogo4.setText("X");
         }
         //vitoria1p();
@@ -340,7 +331,10 @@ public class JogoLocal2P extends javax.swing.JFrame {
         btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
         if (btjogo5.getText() == "X") {
             btjogo5.setText("O");
+            vitoria1p();
         } else {
+            valor = vitoria1p();
+            if (valor == false)
             btjogo5.setText("X");
         }
         //vitoria1p();
@@ -350,7 +344,10 @@ public class JogoLocal2P extends javax.swing.JFrame {
         btjogo6.setFont(new java.awt.Font("Tahoma", 0, 55));
         if (btjogo6.getText() == "X") {
             btjogo6.setText("O");
+            vitoria1p();
         } else {
+            valor = vitoria1p();
+            if (valor == false)
             btjogo6.setText("X");
         }
         //vitoria1p();
@@ -360,7 +357,10 @@ public class JogoLocal2P extends javax.swing.JFrame {
         btjogo7.setFont(new java.awt.Font("Tahoma", 0, 55));
         if (btjogo7.getText() == "X") {
             btjogo7.setText("O");
+            vitoria1p();
         } else {
+            valor = vitoria1p();
+            if (valor == false)
             btjogo7.setText("X");
         }
         //vitoria1p();
@@ -370,7 +370,10 @@ public class JogoLocal2P extends javax.swing.JFrame {
         btjogo8.setFont(new java.awt.Font("Tahoma", 0, 55));
         if (btjogo8.getText() == "X") {
             btjogo8.setText("O");
+            vitoria1p();
         } else {
+            valor = vitoria1p();
+            if (valor == false)
             btjogo8.setText("X");
         }
         //vitoria1p();
@@ -380,7 +383,10 @@ public class JogoLocal2P extends javax.swing.JFrame {
         btjogo9.setFont(new java.awt.Font("Tahoma", 0, 55));
         if (btjogo9.getText() == "X") {
             btjogo9.setText("O");
+            vitoria1p();
         } else {
+            valor = vitoria1p();
+            if (valor == false)
             btjogo9.setText("X");
         }
         //vitoria1p();
@@ -396,19 +402,19 @@ public class JogoLocal2P extends javax.swing.JFrame {
     }
 
     private void resetarJogo() {
-        btjogo1.setText(null);
-        btjogo2.setText(null);
-        btjogo3.setText(null);
-        btjogo4.setText(null);
-        btjogo5.setText(null);
-        btjogo6.setText(null);
-        btjogo7.setText(null);
-        btjogo8.setText(null);
-        btjogo9.setText(null);
+        btjogo1.setText("");
+        btjogo2.setText("");
+        btjogo3.setText("");
+        btjogo4.setText("");
+        btjogo5.setText("");
+        btjogo6.setText("");
+        btjogo7.setText("");
+        btjogo8.setText("");
+        btjogo9.setText("");
     }
 
-    private void vitoria1p() {
-
+    private boolean vitoria1p() {
+boolean teste = false;
         if ((btjogo1.getText() == "X" && btjogo2.getText() == "X" && btjogo3.getText() == "X")
                 || (btjogo4.getText() == "X" && btjogo5.getText() == "X" && btjogo6.getText() == "X")
                 || (btjogo7.getText() == "X" && btjogo8.getText() == "X" && btjogo9.getText() == "X")
@@ -419,19 +425,24 @@ public class JogoLocal2P extends javax.swing.JFrame {
                 || (btjogo7.getText() == "X" && btjogo5.getText() == "X" && btjogo3.getText() == "X")) {
             JOptionPane.showMessageDialog(null, lbljogador1.getText() + " venceu!");
             resetarJogo();
+            teste = true;
+            
         } else {
             if ((btjogo1.getText() == "O" && btjogo2.getText() == "O" && btjogo3.getText() == "O") || (btjogo4.getText() == "O" && btjogo5.getText() == "O" && btjogo6.getText() == "O") || (btjogo7.getText() == "O" && btjogo8.getText() == "O" && btjogo9.getText() == "O") || (btjogo1.getText() == "O" && btjogo4.getText() == "O" && btjogo7.getText() == "O") || (btjogo2.getText() == "O" && btjogo5.getText() == "O" && btjogo8.getText() == "O") || (btjogo3.getText() == "O" && btjogo6.getText() == "O" && btjogo9.getText() == "O") || (btjogo1.getText() == "O" && btjogo5.getText() == "O" && btjogo9.getText() == "O") || (btjogo7.getText() == "O" && btjogo5.getText() == "O" && btjogo3.getText() == "O")) {
                 JOptionPane.showMessageDialog(null, lbljogador2.getText() + " venceu!");
                 resetarJogo();
+                teste = true;
             } else {
                 if (btjogo1.getText() != "" && btjogo2.getText() != "" && btjogo3.getText() != ""
                         && btjogo4.getText() != "" && btjogo5.getText() != "" && btjogo6.getText() != ""
                         && btjogo7.getText() != "" && btjogo8.getText() != "" && btjogo9.getText() != "") {
                     JOptionPane.showMessageDialog(null, "Empate!");
                     resetarJogo();
+                    teste = true;
                 }
             }
         }
+        return teste;
     }
 
 
@@ -450,8 +461,6 @@ public class JogoLocal2P extends javax.swing.JFrame {
     private javax.swing.JLabel lbljogador1;
     private javax.swing.JLabel lbljogador2;
     private javax.swing.JLabel lblmenujogadores;
-    private javax.swing.JLabel lblnomejogador1;
-    private javax.swing.JLabel lblnomejogador2;
     private javax.swing.JPanel pnlcontrolejogo;
     private javax.swing.JPanel pnljogadores;
     private javax.swing.JPanel pnljogo;

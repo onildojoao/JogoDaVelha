@@ -46,7 +46,7 @@ public class MenuGeral extends javax.swing.JFrame {
 
         jPanel2.setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Joao\\Downloads\\200px-Tic_Tac_Toe.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Joao\\Documents\\NetBeansProjects\\JogoDaVelhaValores\\src\\jogodavelha\\icon.png")); // NOI18N
         jPanel2.add(jLabel1);
         jLabel1.setBounds(30, 0, 260, 200);
 
@@ -105,7 +105,7 @@ public class MenuGeral extends javax.swing.JFrame {
                 .addComponent(btjogarweb)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btsair)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
