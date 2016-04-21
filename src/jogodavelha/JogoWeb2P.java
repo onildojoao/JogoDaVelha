@@ -28,11 +28,12 @@ public class JogoWeb2P extends javax.swing.JFrame {
     String id;
     String xis ="X";
     String bola ="O";
+    String ip;
 
     public JogoWeb2P(String nome) {
         initComponents();
 
-        //this.id = id;
+        //ip = JOptionPane.showInputDialog(null, "Qual o ip a ser conectado?");
         id = JOptionPane.showInputDialog(null, "Qual vai ser a sua variável?");
         //showMessageDialog(null, id);
         this.nomeJogador = nome;
