@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 public class JogoLocal2P extends javax.swing.JFrame {
 
     String nomeJogador = "Jogador 1";
-    boolean valor;
+    boolean turno = true;
 
     public JogoLocal2P() {
         initComponents();
@@ -279,117 +279,155 @@ public class JogoLocal2P extends javax.swing.JFrame {
 
     private void btjogo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo1ActionPerformed
         btjogo1.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo1.getText() == "X") {
-            btjogo1.setText("O");
-            vitoria1p();
+        if (btjogo1.getText() == "") {
+            if (turno == true) {
+                btjogo1.setText("X");
+                turno = false;
+                vitoria1p();
+            } else {
+                btjogo1.setText("O");
+                turno = true;
+                vitoria1p();
+            }
         } else {
-            valor = vitoria1p();
-            if (valor == false)
-            btjogo1.setText("X");
+            JOptionPane.showMessageDialog(null, "Botão já escolhido!", "", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btjogo1ActionPerformed
 
     private void btjogo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo2ActionPerformed
         btjogo2.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo2.getText() == "X") {
-            btjogo2.setText("O");
-            vitoria1p();
+        if (btjogo2.getText() == "") {
+            if (turno == true) {
+                btjogo2.setText("X");
+                turno = false;
+                vitoria1p();
+            } else {
+                btjogo2.setText("O");
+                turno = true;
+                vitoria1p();
+            }
         } else {
-            valor = vitoria1p();
-            if (valor == false)
-            btjogo2.setText("X");
+            JOptionPane.showMessageDialog(null, "Botão já escolhido!", "", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btjogo2ActionPerformed
 
     private void btjogo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo3ActionPerformed
         btjogo3.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo3.getText() == "X") {
-            btjogo3.setText("O");
-            vitoria1p();
+        if (btjogo3.getText() == "") {
+            if (turno == true) {
+                btjogo3.setText("X");
+                turno = false;
+                vitoria1p();
+            } else {
+                btjogo3.setText("O");
+                turno = true;
+                vitoria1p();
+            }
         } else {
-            valor = vitoria1p();
-            if (valor == false)
-            btjogo3.setText("X");
+            JOptionPane.showMessageDialog(null, "Botão já escolhido!", "", JOptionPane.ERROR_MESSAGE);
         }
-        //vitoria1p();
     }//GEN-LAST:event_btjogo3ActionPerformed
 
     private void btjogo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo4ActionPerformed
         btjogo4.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo4.getText() == "X") {
-            btjogo4.setText("O");
-            vitoria1p();
+        if (btjogo4.getText() == "") {
+            if (turno == true) {
+                btjogo4.setText("X");
+                turno = false;
+                vitoria1p();
+            } else {
+                btjogo4.setText("O");
+                turno = true;
+                vitoria1p();
+            }
         } else {
-            valor = vitoria1p();
-            if (valor == false)
-            btjogo4.setText("X");
+            JOptionPane.showMessageDialog(null, "Botão já escolhido!", "", JOptionPane.ERROR_MESSAGE);
         }
-        //vitoria1p();
     }//GEN-LAST:event_btjogo4ActionPerformed
 
     private void btjogo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo5ActionPerformed
         btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo5.getText() == "X") {
-            btjogo5.setText("O");
-            vitoria1p();
+        if (btjogo5.getText() == "") {
+            if (turno == true) {
+                btjogo5.setText("X");
+                turno = false;
+                vitoria1p();
+            } else {
+                btjogo5.setText("O");
+                turno = true;
+                vitoria1p();
+            }
         } else {
-            valor = vitoria1p();
-            if (valor == false)
-            btjogo5.setText("X");
+            JOptionPane.showMessageDialog(null, "Botão já escolhido!", "", JOptionPane.ERROR_MESSAGE);
         }
-        //vitoria1p();
     }//GEN-LAST:event_btjogo5ActionPerformed
 
     private void btjogo6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo6ActionPerformed
         btjogo6.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo6.getText() == "X") {
-            btjogo6.setText("O");
-            vitoria1p();
+        if (btjogo6.getText() == "") {
+            if (turno == true) {
+                btjogo6.setText("X");
+                turno = false;
+                vitoria1p();
+            } else {
+                btjogo6.setText("O");
+                turno = true;
+                vitoria1p();
+            }
         } else {
-            valor = vitoria1p();
-            if (valor == false)
-            btjogo6.setText("X");
+            JOptionPane.showMessageDialog(null, "Botão já escolhido!", "", JOptionPane.ERROR_MESSAGE);
         }
-        //vitoria1p();
     }//GEN-LAST:event_btjogo6ActionPerformed
 
     private void btjogo7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo7ActionPerformed
         btjogo7.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo7.getText() == "X") {
-            btjogo7.setText("O");
-            vitoria1p();
+        if (btjogo7.getText() == "") {
+            if (turno == true) {
+                btjogo7.setText("X");
+                turno = false;
+                vitoria1p();
+            } else {
+                btjogo7.setText("O");
+                turno = true;
+                vitoria1p();
+            }
         } else {
-            valor = vitoria1p();
-            if (valor == false)
-            btjogo7.setText("X");
+            JOptionPane.showMessageDialog(null, "Botão já escolhido!", "", JOptionPane.ERROR_MESSAGE);
         }
-        //vitoria1p();
     }//GEN-LAST:event_btjogo7ActionPerformed
 
     private void btjogo8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo8ActionPerformed
         btjogo8.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo8.getText() == "X") {
-            btjogo8.setText("O");
-            vitoria1p();
+        if (btjogo8.getText() == "") {
+            if (turno == true) {
+                btjogo8.setText("X");
+                turno = false;
+                vitoria1p();
+            } else {
+                btjogo8.setText("O");
+                turno = true;
+                vitoria1p();
+            }
         } else {
-            valor = vitoria1p();
-            if (valor == false)
-            btjogo8.setText("X");
+            JOptionPane.showMessageDialog(null, "Botão já escolhido!", "", JOptionPane.ERROR_MESSAGE);
         }
-        //vitoria1p();
     }//GEN-LAST:event_btjogo8ActionPerformed
 
     private void btjogo9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogo9ActionPerformed
         btjogo9.setFont(new java.awt.Font("Tahoma", 0, 55));
-        if (btjogo9.getText() == "X") {
-            btjogo9.setText("O");
-            vitoria1p();
+        if (btjogo9.getText() == "") {
+            if (turno == true) {
+                btjogo9.setText("X");
+                turno = false;
+                vitoria1p();
+            } else {
+                btjogo9.setText("O");
+                turno = true;
+                vitoria1p();
+            }
         } else {
-            valor = vitoria1p();
-            if (valor == false)
-            btjogo9.setText("X");
+            JOptionPane.showMessageDialog(null, "Botão já escolhido!", "", JOptionPane.ERROR_MESSAGE);
         }
-        //vitoria1p();
     }//GEN-LAST:event_btjogo9ActionPerformed
 
     private void definirNomeJogador() {
@@ -411,10 +449,10 @@ public class JogoLocal2P extends javax.swing.JFrame {
         btjogo7.setText("");
         btjogo8.setText("");
         btjogo9.setText("");
+        turno = true;
     }
 
-    private boolean vitoria1p() {
-boolean teste = false;
+    private void vitoria1p() {
         if ((btjogo1.getText() == "X" && btjogo2.getText() == "X" && btjogo3.getText() == "X")
                 || (btjogo4.getText() == "X" && btjogo5.getText() == "X" && btjogo6.getText() == "X")
                 || (btjogo7.getText() == "X" && btjogo8.getText() == "X" && btjogo9.getText() == "X")
@@ -425,24 +463,19 @@ boolean teste = false;
                 || (btjogo7.getText() == "X" && btjogo5.getText() == "X" && btjogo3.getText() == "X")) {
             JOptionPane.showMessageDialog(null, lbljogador1.getText() + " venceu!");
             resetarJogo();
-            teste = true;
-            
         } else {
             if ((btjogo1.getText() == "O" && btjogo2.getText() == "O" && btjogo3.getText() == "O") || (btjogo4.getText() == "O" && btjogo5.getText() == "O" && btjogo6.getText() == "O") || (btjogo7.getText() == "O" && btjogo8.getText() == "O" && btjogo9.getText() == "O") || (btjogo1.getText() == "O" && btjogo4.getText() == "O" && btjogo7.getText() == "O") || (btjogo2.getText() == "O" && btjogo5.getText() == "O" && btjogo8.getText() == "O") || (btjogo3.getText() == "O" && btjogo6.getText() == "O" && btjogo9.getText() == "O") || (btjogo1.getText() == "O" && btjogo5.getText() == "O" && btjogo9.getText() == "O") || (btjogo7.getText() == "O" && btjogo5.getText() == "O" && btjogo3.getText() == "O")) {
                 JOptionPane.showMessageDialog(null, lbljogador2.getText() + " venceu!");
                 resetarJogo();
-                teste = true;
             } else {
                 if (btjogo1.getText() != "" && btjogo2.getText() != "" && btjogo3.getText() != ""
                         && btjogo4.getText() != "" && btjogo5.getText() != "" && btjogo6.getText() != ""
                         && btjogo7.getText() != "" && btjogo8.getText() != "" && btjogo9.getText() != "") {
                     JOptionPane.showMessageDialog(null, "Empate!");
                     resetarJogo();
-                    teste = true;
                 }
             }
         }
-        return teste;
     }
 
 
