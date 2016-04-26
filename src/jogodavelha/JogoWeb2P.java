@@ -246,6 +246,11 @@ public class JogoWeb2P extends javax.swing.JFrame {
 
         areaUsuario.setColumns(20);
         areaUsuario.setRows(5);
+        areaUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                areaUsuarioKeyReleased(evt);
+            }
+        });
         jScrollPane2.setViewportView(areaUsuario);
 
         btenviar.setText("Enviar");
@@ -438,21 +443,25 @@ public class JogoWeb2P extends javax.swing.JFrame {
     }//GEN-LAST:event_btenviarActionPerformed
 
     private void btenviarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btenviarKeyReleased
+        
+    }//GEN-LAST:event_btenviarKeyReleased
+
+    private void areaUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_areaUsuarioKeyReleased
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             enviarMensagem();
         }
-    }//GEN-LAST:event_btenviarKeyReleased
+    }//GEN-LAST:event_areaUsuarioKeyReleased
 
     private void resetarJogo() {
-        btjogo1.setText(null);
-        btjogo2.setText(null);
-        btjogo3.setText(null);
-        btjogo4.setText(null);
-        btjogo5.setText(null);
-        btjogo6.setText(null);
-        btjogo7.setText(null);
-        btjogo8.setText(null);
-        btjogo9.setText(null);
+        btjogo1.setText("");
+        btjogo2.setText("");
+        btjogo3.setText("");
+        btjogo4.setText("");
+        btjogo5.setText("");
+        btjogo6.setText("");
+        btjogo7.setText("");
+        btjogo8.setText("");
+        btjogo9.setText("");
     }
 
     private void vitoria1p() {
