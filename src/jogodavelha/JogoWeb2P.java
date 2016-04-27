@@ -463,7 +463,6 @@ public class JogoWeb2P extends javax.swing.JFrame {
     }
 
     private void vitoria1p() {
-        //showMessageDialog(null, btjogo1.getText());
         if ((btjogo1.getText().equals(xis) && btjogo2.getText().equals(xis) && btjogo3.getText().equals(xis))
                 || (btjogo4.getText().equals(xis) && btjogo5.getText().equals(xis) && btjogo6.getText().equals(xis))
                 || (btjogo7.getText().equals(xis) && btjogo8.getText().equals(xis) && btjogo9.getText().equals(xis))
@@ -650,7 +649,6 @@ public class JogoWeb2P extends javax.swing.JFrame {
         try {
             PrintStream ps = new PrintStream(s.getOutputStream());
             mensagem += areaUsuario.getText();
-            //showMessageDialog(null, mensagem);
             ps.println(mensagem);
             ps.flush();
 
@@ -668,7 +666,6 @@ public class JogoWeb2P extends javax.swing.JFrame {
         try {
             PrintStream ps = new PrintStream(s.getOutputStream());
             mensagem += valor + id;
-            //showMessageDialog(null, mensagem);
             ps.println(mensagem);
             ps.flush();
 

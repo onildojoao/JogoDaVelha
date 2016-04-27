@@ -18,7 +18,7 @@ public class MenuGeral extends javax.swing.JFrame {
      */
     public MenuGeral() {
         initComponents();
-        
+
     }
 
     /**
@@ -165,9 +165,20 @@ public class MenuGeral extends javax.swing.JFrame {
 
     private void btjogarwebActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjogarwebActionPerformed
         String nomeJogador = JOptionPane.showInputDialog(null, "Digite seu nome:");
-        JogoWeb2P j3 = new JogoWeb2P(nomeJogador);
+        JogoWeb2P j3, j4;
+        if (nomeJogador.equals("") || nomeJogador == null) {
+            nomeJogador = "Jogador 1";
+            j3 = new JogoWeb2P(nomeJogador);
+        } else {
+            j3 = new JogoWeb2P(nomeJogador);
+        }
         nomeJogador = JOptionPane.showInputDialog(null, "Digite seu nome:");
-        JogoWeb2P j4 = new JogoWeb2P(nomeJogador);
+        if (nomeJogador.equals("") || nomeJogador == null) {
+            nomeJogador = "Jogador 2";
+            j4 = new JogoWeb2P(nomeJogador);
+        } else {
+            j4 = new JogoWeb2P(nomeJogador);
+        }
         j3.setLocationRelativeTo(null);
         j4.setLocationRelativeTo(null);
         j3.setVisible(true);

@@ -148,15 +148,15 @@ public class JogoLocal2P extends javax.swing.JFrame {
         lblmenujogadores.setText("Jogadores");
 
         lbljogador1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lbljogador1.setText("Jogador 1:");
+        lbljogador1.setText("Jogador 1");
 
         lbljogador2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lbljogador2.setText("Jogador 2:");
+        lbljogador2.setText("Jogador 2");
 
         variaveljogador1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        variaveljogador1.setText("X");
+        variaveljogador1.setText(": X");
 
-        variaveljogador2.setText("O");
+        variaveljogador2.setText(": O");
 
         pnlcontrolejogo.setBorder(javax.swing.BorderFactory.createTitledBorder("Controle de Jogo"));
 
@@ -428,12 +428,18 @@ public class JogoLocal2P extends javax.swing.JFrame {
     }//GEN-LAST:event_btjogo9ActionPerformed
 
     private void definirNomeJogador() {
-
         nomeJogador = JOptionPane.showInputDialog(null, "Insira o nome do jogador 1:");
-        lbljogador1.setText(nomeJogador + ":");
+        if (nomeJogador.equals("") || nomeJogador == null) {
+            lbljogador1.setText("Jogador 1");
+        } else {
+            lbljogador1.setText(nomeJogador);
+        }
         nomeJogador = JOptionPane.showInputDialog(null, "Insira o nome do jogador 2:");
-        lbljogador2.setText(nomeJogador + ":");
-
+        if (nomeJogador.equals("") || nomeJogador == null) {
+            lbljogador2.setText("Jogador 2");
+        } else {
+            lbljogador2.setText(nomeJogador);
+        }
     }
 
     private void resetarJogo() {
