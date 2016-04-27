@@ -1,18 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package jogodavelha;
 
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import static javax.swing.JOptionPane.showMessageDialog;
 
-/**
- *
- * @author Joao
- */
 public class JogoLocal1P extends javax.swing.JFrame {
 
     String nomeJogador = "Jogador 1";
@@ -514,12 +505,10 @@ public class JogoLocal1P extends javax.swing.JFrame {
         } else if (btjogo1.getText() == "X" && btjogo9.getText() == "X" && btjogo5.getText() == "") {
             btjogo5.setText("O");
             btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
-        }else{
+        } else {
             jogosAleatorios();
-        } 
+        }
     }
-            
-    
 
     private void jogosAleatorios() {
         if (btjogo5.getText() == "") {

@@ -24,21 +24,36 @@ public class JogoWeb2P extends javax.swing.JFrame {
     private boolean rodar;
     String nomeJogador = "Jogador 1";
     String id;
-    String xis ="X";
-    String bola ="O";
+    String xis = "X";
+    String bola = "O";
     String ip;
+    Object[] colours = {"X", "O"};
 
     public JogoWeb2P(String nome) {
         initComponents();
 
         //ip = JOptionPane.showInputDialog(null, "Qual o ip a ser conectado?");
-        id = JOptionPane.showInputDialog(null, "Qual vai ser a sua variável?");
-        //showMessageDialog(null, id);
+        //id = JOptionPane.showInputDialog(null, "Qual vai ser a sua variável?");
         this.nomeJogador = nome;
         rodar = true;
 
         try {
             s = new Socket("127.0.0.1", 5000);
+            int n = JOptionPane.showOptionDialog(null,
+                    "X ou O?",
+                    "Escolha um",
+                    JOptionPane.DEFAULT_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    colours,
+                    colours[0]);
+            if (n == 0) {
+                id = "X";
+                //showMessageDialog(null, id);
+            } else {
+                id = "O";
+                //showMessageDialog(null, id);
+            }
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "Não se conectou ao seridor");
         }
@@ -441,7 +456,7 @@ public class JogoWeb2P extends javax.swing.JFrame {
     }//GEN-LAST:event_btenviarActionPerformed
 
     private void btenviarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btenviarKeyReleased
-        
+
     }//GEN-LAST:event_btenviarKeyReleased
 
     private void areaUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_areaUsuarioKeyReleased
