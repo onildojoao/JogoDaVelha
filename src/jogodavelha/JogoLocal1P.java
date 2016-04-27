@@ -1,18 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package jogodavelha;
 
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
 import static javax.swing.JOptionPane.showMessageDialog;
 
-/**
- *
- * @author Joao
- */
 public class JogoLocal1P extends javax.swing.JFrame {
 
     String nomeJogador = "Jogador 1";
@@ -158,15 +149,15 @@ public class JogoLocal1P extends javax.swing.JFrame {
         lblmenujogadores.setText("Jogadores");
 
         lbljogador1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lbljogador1.setText("Jogador 1:");
+        lbljogador1.setText("Jogador 1");
 
         lbljogador2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lbljogador2.setText("Computador :");
+        lbljogador2.setText("Computador ");
 
         variaveljogador1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        variaveljogador1.setText("X");
+        variaveljogador1.setText(": X");
 
-        variaveljogador2.setText("O");
+        variaveljogador2.setText(": O");
 
         pnlcontrolejogo.setBorder(javax.swing.BorderFactory.createTitledBorder("Controle de Jogo"));
 
@@ -218,13 +209,13 @@ public class JogoLocal1P extends javax.swing.JFrame {
                             .addGroup(pnljogadoresLayout.createSequentialGroup()
                                 .addGroup(pnljogadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(pnljogadoresLayout.createSequentialGroup()
-                                        .addComponent(lbljogador2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(variaveljogador2))
-                                    .addGroup(pnljogadoresLayout.createSequentialGroup()
                                         .addComponent(lbljogador1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(variaveljogador1)))
+                                        .addComponent(variaveljogador1))
+                                    .addGroup(pnljogadoresLayout.createSequentialGroup()
+                                        .addComponent(lbljogador2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(variaveljogador2)))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(pnljogadoresLayout.createSequentialGroup()
                         .addGap(50, 50, 50)
@@ -386,7 +377,11 @@ public class JogoLocal1P extends javax.swing.JFrame {
 
     private void definirNomeJogador() {
         nomeJogador = JOptionPane.showInputDialog(null, "Qual o seu nome?");
-        lbljogador1.setText(nomeJogador + ":");
+        if (nomeJogador.equals("") || nomeJogador == null) {
+            lbljogador1.setText("Jogador 1");
+        } else {
+            lbljogador1.setText(nomeJogador);
+        }
     }
 
     private void resetarJogo() {
@@ -510,12 +505,10 @@ public class JogoLocal1P extends javax.swing.JFrame {
         } else if (btjogo1.getText() == "X" && btjogo9.getText() == "X" && btjogo5.getText() == "") {
             btjogo5.setText("O");
             btjogo5.setFont(new java.awt.Font("Tahoma", 0, 55));
-        }else{
+        } else {
             jogosAleatorios();
-        } 
+        }
     }
-            
-    
 
     private void jogosAleatorios() {
         if (btjogo5.getText() == "") {

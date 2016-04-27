@@ -8,8 +8,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.ERROR_MESSAGE;
@@ -26,21 +24,36 @@ public class JogoWeb2P extends javax.swing.JFrame {
     private boolean rodar;
     String nomeJogador = "Jogador 1";
     String id;
-    String xis ="X";
-    String bola ="O";
+    String xis = "X";
+    String bola = "O";
     String ip;
+    Object[] colours = {"X", "O"};
 
     public JogoWeb2P(String nome) {
         initComponents();
 
         //ip = JOptionPane.showInputDialog(null, "Qual o ip a ser conectado?");
-        id = JOptionPane.showInputDialog(null, "Qual vai ser a sua variável?");
-        //showMessageDialog(null, id);
+        //id = JOptionPane.showInputDialog(null, "Qual vai ser a sua variável?");
         this.nomeJogador = nome;
         rodar = true;
 
         try {
             s = new Socket("127.0.0.1", 5000);
+            int n = JOptionPane.showOptionDialog(null,
+                    "X ou O?",
+                    "Escolha um",
+                    JOptionPane.DEFAULT_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    colours,
+                    colours[0]);
+            if (n == 0) {
+                id = "X";
+                //showMessageDialog(null, id);
+            } else {
+                id = "O";
+                //showMessageDialog(null, id);
+            }
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "Não se conectou ao seridor");
         }
@@ -246,6 +259,11 @@ public class JogoWeb2P extends javax.swing.JFrame {
 
         areaUsuario.setColumns(20);
         areaUsuario.setRows(5);
+        areaUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                areaUsuarioKeyReleased(evt);
+            }
+        });
         jScrollPane2.setViewportView(areaUsuario);
 
         btenviar.setText("Enviar");
@@ -438,25 +456,28 @@ public class JogoWeb2P extends javax.swing.JFrame {
     }//GEN-LAST:event_btenviarActionPerformed
 
     private void btenviarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btenviarKeyReleased
+
+    }//GEN-LAST:event_btenviarKeyReleased
+
+    private void areaUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_areaUsuarioKeyReleased
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             enviarMensagem();
         }
-    }//GEN-LAST:event_btenviarKeyReleased
+    }//GEN-LAST:event_areaUsuarioKeyReleased
 
     private void resetarJogo() {
-        btjogo1.setText(null);
-        btjogo2.setText(null);
-        btjogo3.setText(null);
-        btjogo4.setText(null);
-        btjogo5.setText(null);
-        btjogo6.setText(null);
-        btjogo7.setText(null);
-        btjogo8.setText(null);
-        btjogo9.setText(null);
+        btjogo1.setText("");
+        btjogo2.setText("");
+        btjogo3.setText("");
+        btjogo4.setText("");
+        btjogo5.setText("");
+        btjogo6.setText("");
+        btjogo7.setText("");
+        btjogo8.setText("");
+        btjogo9.setText("");
     }
 
     private void vitoria1p() {
-        //showMessageDialog(null, btjogo1.getText());
         if ((btjogo1.getText().equals(xis) && btjogo2.getText().equals(xis) && btjogo3.getText().equals(xis))
                 || (btjogo4.getText().equals(xis) && btjogo5.getText().equals(xis) && btjogo6.getText().equals(xis))
                 || (btjogo7.getText().equals(xis) && btjogo8.getText().equals(xis) && btjogo9.getText().equals(xis))
@@ -643,7 +664,6 @@ public class JogoWeb2P extends javax.swing.JFrame {
         try {
             PrintStream ps = new PrintStream(s.getOutputStream());
             mensagem += areaUsuario.getText();
-            //showMessageDialog(null, mensagem);
             ps.println(mensagem);
             ps.flush();
 
@@ -661,7 +681,6 @@ public class JogoWeb2P extends javax.swing.JFrame {
         try {
             PrintStream ps = new PrintStream(s.getOutputStream());
             mensagem += valor + id;
-            //showMessageDialog(null, mensagem);
             ps.println(mensagem);
             ps.flush();
 
